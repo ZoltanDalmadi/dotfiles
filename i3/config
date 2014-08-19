@@ -1,59 +1,8 @@
+# Set mod key (Mod4 = Win key)
 set $mod Mod4
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below. ISO 10646 = Unicode
-
-# Tamsyn10x20r.pcf
-# font -misc-tamsyn-medium-r-normal--20-145-100-100-c-100-iso8859-1
-
-# Tamsyn10x20b.pcf
-# font -misc-tamsyn-bold-r-normal--20-145-100-100-c-100-iso8859-1
-
-# Tamsyn5x9r.pcf
-# font -misc-tamsyn-medium-r-normal--9-65-100-100-c-50-iso8859-1
-
-# Tamsyn5x9b.pcf
-# font -misc-tamsyn-bold-r-normal--9-65-100-100-c-50-iso8859-1
-
-# Tamsyn6x12r.pcf
-# font -misc-tamsyn-medium-r-normal--12-87-100-100-c-60-iso8859-1
-
-# Tamsyn6x12b.pcf
-# font -misc-tamsyn-bold-r-normal--12-87-100-100-c-60-iso8859-1
-
-# Tamsyn7x13r.pcf
-# font -misc-tamsyn-medium-r-normal--13-94-100-100-c-70-iso8859-1
-
-# Tamsyn7x13b.pcf
-# font -misc-tamsyn-bold-r-normal--13-94-100-100-c-70-iso8859-1
-
-# Tamsyn7x14r.pcf
-# font -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1
-
-# Tamsyn7x14b.pcf
-# font -misc-tamsyn-bold-r-normal--14-101-100-100-c-70-iso8859-1
-
-# Tamsyn8x15r.pcf
-# font -misc-tamsyn-medium-r-normal--15-108-100-100-c-80-iso8859-1
-
-# Tamsyn8x15b.pcf
-# font -misc-tamsyn-bold-r-normal--15-108-100-100-c-80-iso8859-1
-
-# Tamsyn8x16r.pcf
-# font -misc-tamsyn-medium-r-normal--16-116-100-100-c-80-iso8859-1
-
-# Tamsyn8x16b.pcf
-# font -misc-tamsyn-bold-r-normal--16-116-100-100-c-80-iso8859-1
 
 # Bar icon font
 font -misc-tamsynmod-medium-r-normal--14-101-100-100-c-70-iso8859-1
-
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, if you need a lot of unicode glyphs or
-# right-to-left text rendering, you should instead use pango for rendering and
-# chose a FreeType font, such as:
-# font pango:Terminus 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -65,7 +14,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn -misc-tamsyn-medium-r-normal--13-94-100-100-c-70-iso8859-1 -nb "#282828" -nf "#fdf4c1" -sb "#b8bb26" -sf "#282828"
+bindsym $mod+d exec --no-startup-id dmenu_run -fn -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1 -nb "#282828" -nf "#ebdbb2" -sb "#b8bb26" -sf "#282828"
 
 # change focus
 bindsym $mod+j focus left
@@ -142,8 +91,6 @@ bindsym $mod+Shift+odiaeresis move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -174,20 +121,20 @@ bindsym $mod+r mode "resize"
 # No border for new windows
 new_window none
 
-# Floating mode for specific windows ==========================================
+# Floating mode for specific windows ========================================
 for_window [instance="lxappearance"] floating enable border normal
 for_window [instance="lxtask"] floating enable border normal
 for_window [instance="nitrogen"] floating enable border normal
 for_window [instance="viewnior"] floating enable border normal
 for_window [instance="sxiv"] floating enable border normal
 
-# Programs on specific workspaces =============================================
+# Programs on specific workspaces ===========================================
 assign [class="URxvt"] 1:terminal
 assign [class="Chromium"] 2:www
 assign [class="Dwb"] 2:www
 assign [class="Gvim"] 3:vim
 
-# Custom key commands =========================================================
+# Custom key commands =======================================================
 # Toggle borders of windows
 bindsym $mod+t border toggle
 
@@ -212,11 +159,11 @@ mode "$mode_system" {
 
 bindsym $mod+Pause mode "$mode_system"
 
-# Startup programs ============================================================
+# Startup programs ==========================================================
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id mpd
 
-# Statusbar with conky ========================================================
+# Statusbar with conky ======================================================
 bar {
   position top
   strip_workspace_numbers yes
@@ -233,7 +180,7 @@ bar {
   }
 }
 
-# Color theme (i3-style) ======================================================
+# Color theme (i3-style) ====================================================
 client.focused #b8bb26 #b8bb26 #fdf4c1 #b8bb26
 client.focused_inactive #3c3836 #3c3836 #d5c4a1 #d3869b
 client.unfocused #3c3836 #3c3836 #a89984 #8ec07c
