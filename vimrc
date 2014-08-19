@@ -67,9 +67,9 @@ Plugin 'tpope/vim-sensible'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
-" Plugin 'nanotech/jellybeans.vim'
-" Plugin 'w0ng/vim-hybrid'
-" Plugin 'altercation/vim-colors-solarized'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'altercation/vim-colors-solarized'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
@@ -90,6 +90,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'Yggdroot/indentLine'
 Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-scripts/hexHighlight.vim'
