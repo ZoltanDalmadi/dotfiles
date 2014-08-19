@@ -1,63 +1,59 @@
-! -----------------------------------------------------------------------------
-! File: gruvbox-dark.xresources
-! Description: Retro groove colorscheme generalized
+! Color Scheme --------------------------------------------------------------
 ! Author: morhetz <morhetz@gmail.com>
 ! Source: https://github.com/morhetz/gruvbox-generalized
-! Last Modified: 11 Dec 2013
-! -----------------------------------------------------------------------------
 
 *background: #282828
 *foreground: #ebdbb2
+
 ! Black + DarkGrey
 *color0:  #282828
 *color8:  #7c6f64
+
 ! DarkRed + Red
 *color1:  #cc241d
 *color9:  #fb4934
+
 ! DarkGreen + Green
 *color2:  #98971a
 *color10: #b8bb26
+
 ! DarkYellow + Yellow
 *color3:  #d79921
 *color11: #fabd2f
+
 ! DarkBlue + Blue
 *color4:  #458588
 *color12: #83a598
+
 ! DarkMagenta + Magenta
 *color5:  #b16286
 *color13: #d3869b
+
 ! DarkCyan + Cyan
 *color6:  #689d6a
 *color14: #8ec07c
+
 ! LightGrey + White
 *color7:  #bdae93
 *color15: #ebdbb2
 
-!!! Set font
-! urxvt.font:                -misc-tamsyn-medium-r-normal--13-94-100-100-c-70-iso8859-1
-! urxvt.boldFont:            -misc-tamsyn-bold-r-normal--13-94-100-100-c-70-iso8859-1
-urxvt.font:                -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1
-urxvt.boldFont:            -misc-tamsyn-bold-r-normal--14-101-100-100-c-70-iso8859-1
-! urxvt.font:                -misc-tamsynmod-medium-r-normal--14-101-100-100-c-70-iso8859-1
-! urxvt.boldFont:            -misc-tamsynmod-bold-r-normal--14-101-100-100-c-70-iso8859-1
-! urxvt.font:                -misc-tamzen-medium-r-normal--17-123-100-100-c-80-iso8859-1
-! urxvt.font:                -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
-! urxvt.font:                -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
+! Font setup ----------------------------------------------------------------
+urxvt.font:       -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1
+urxvt.boldFont:   -misc-tamsyn-bold-r-normal--14-101-100-100-c-70-iso8859-1
 
-!!! Fake transparency
-! urxvt.depth:               32
-urxvt.transparent:         true
-urxvt.tintColor:           #282828
+! Fake transparency ---------------------------------------------------------
+urxvt.transparent:  true
+urxvt.tintColor:    #282828
 
-!!! Hide scrollbar
-urxvt.scrollBar:           false
+! Hide scrollbar ------------------------------------------------------------
+urxvt.scrollBar:    false
 
-!!! Default size
-urxvt.geometry:            120x40
+! Default size --------------------------------------------------------------
+urxvt.geometry:     120x40
 
-!!! No scrollback
-urxvt.saveLines:           0
+! No scrollback -------------------------------------------------------------
+urxvt.saveLines:    0
 
-!!! for tmux
-urxvt.loginShell:          true
-urxvt.urgentOnBell:        true
+! For tmux ------------------------------------------------------------------
+urxvt.loginShell:   true
+urxvt.urgentOnBell: true
