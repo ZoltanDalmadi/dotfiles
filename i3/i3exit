@@ -1,0 +1,18 @@
+#!/bin/sh
+
+case "$1" in
+  logout)
+    i3-msg exit
+    ;;
+  reboot)
+    reboot
+    ;;
+  shutdown)
+    poweroff
+    ;;
+  *)
+    echo "Usage: $0 {logout|reboot|shutdown}"
+    exit 2
+esac
+
+exit 0

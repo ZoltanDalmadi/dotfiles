@@ -1,0 +1,12 @@
+style=allman
+indent-col1-comments
+max-instatement-indent=60
+break-blocks
+pad-oper
+unpad-paren
+pad-header
+align-pointer=name
+align-reference=name
+remove-brackets
+close-templates
+max-code-length=80

@@ -1,0 +1,9 @@
+[user]
+	name = Zoltan Dalmadi
+	email = dmz985@gmail.com
+[color]
+	ui = true
+[alias]
+	graph = log --graph --oneline --decorate
+[push]
+	default = simple
