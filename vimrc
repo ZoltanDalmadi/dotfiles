@@ -170,7 +170,7 @@ let g:tmuxline_separators = { 'left' : '',
 
 " indentLine
 let g:indentLine_enabled = 0
-let g:indentLine_char = '|'
+let g:indentLine_char = '│'
 let g:indentLine_faster = 1
 
 " CtrlP
