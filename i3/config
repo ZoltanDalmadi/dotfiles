@@ -64,7 +64,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # switch to workspace
-bindsym $mod+1 workspace 1:terminal
+bindsym $mod+1 workspace 1:term
 bindsym $mod+2 workspace 2:www
 bindsym $mod+3 workspace 3:vim
 bindsym $mod+4 workspace 4
@@ -76,7 +76,7 @@ bindsym $mod+9 workspace 9
 bindsym $mod+odiaeresis workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1:terminal
+bindsym $mod+Shift+1 move container to workspace 1:term
 bindsym $mod+Shift+2 move container to workspace 2:www
 bindsym $mod+Shift+3 move container to workspace 3:vim
 bindsym $mod+Shift+4 move container to workspace 4
@@ -162,6 +162,7 @@ bindsym $mod+Pause mode "$mode_system"
 # Startup programs ==========================================================
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id mpd
+exec --no-startup-id unclutter -idle 3 &
 
 # Statusbar with conky ======================================================
 bar {
