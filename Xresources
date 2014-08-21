@@ -52,7 +52,7 @@ urxvt.scrollBar:    false
 urxvt.geometry:     120x40
 
 ! No scrollback -------------------------------------------------------------
-urxvt.saveLines:    8192
+urxvt.saveLines:    0
 
 ! For tmux ------------------------------------------------------------------
 urxvt.loginShell:   true
