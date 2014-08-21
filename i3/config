@@ -181,7 +181,7 @@ bar {
 }
 
 # Color theme (i3-style) ====================================================
-client.focused #b8bb26 #b8bb26 #fdf4c1 #b8bb26
+client.focused #b8bb26 #b8bb26 #282828 #b8bb26
 client.focused_inactive #3c3836 #3c3836 #d5c4a1 #d3869b
 client.unfocused #3c3836 #3c3836 #a89984 #8ec07c
 client.urgent #d3869b #d3869b #fdf4c1 #fb4934

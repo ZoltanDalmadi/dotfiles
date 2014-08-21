@@ -42,10 +42,10 @@ colors:
 
 window_colors:
   focused:
-    border:         'brightblue'
-    background:     'brightblue'
-    text:           'light0'
-    indicator:      'brightblue'
+    border:         'brightgreen'
+    background:     'brightgreen'
+    text:           'dark0'
+    indicator:      'brightgreen'
   focused_inactive:
     border:         'dark1'
     background:     'dark1'
