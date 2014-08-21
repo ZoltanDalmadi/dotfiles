@@ -170,7 +170,7 @@ bar {
   status_command ~/.i3/conky-i3bar
   # (i3-style)
   colors {
-    separator #fb4934
+    separator #d3869b
     background #282828
     statusline #83a598
     focused_workspace #b8bb26 #b8bb26 #282828
@@ -184,4 +184,4 @@ bar {
 client.focused #b8bb26 #b8bb26 #282828 #b8bb26
 client.focused_inactive #3c3836 #3c3836 #d5c4a1 #d3869b
 client.unfocused #3c3836 #3c3836 #a89984 #8ec07c
-client.urgent #d3869b #d3869b #fdf4c1 #fb4934
+client.urgent #fe8019 #fe8019 #3c3836 #fb4934

@@ -57,12 +57,12 @@ window_colors:
     text:           'light4'
     indicator:      'brightaqua'
   urgent:
-    border:         'brightpurple'
-    background:     'brightpurple'
-    text:           'light0'
+    border:         'brightorange'
+    background:     'brightorange'
+    text:           'dark1'
     indicator:      'brightred'
 bar_colors:
-  separator:        'brightred'
+  separator:        'brightpurple'
   background:       'dark0'
   statusline:       'brightblue'
   focused_workspace:
