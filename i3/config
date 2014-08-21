@@ -129,7 +129,7 @@ for_window [instance="viewnior"] floating enable border normal
 for_window [instance="sxiv"] floating enable border normal
 
 # Programs on specific workspaces ===========================================
-assign [class="URxvt"] 1:terminal
+assign [class="URxvt"] 1:term
 assign [class="Chromium"] 2:www
 assign [class="Dwb"] 2:www
 assign [class="Gvim"] 3:vim
