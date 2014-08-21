@@ -119,7 +119,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # No border for new windows
-new_window none
+new_window 1pixel
 
 # Floating mode for specific windows ========================================
 for_window [instance="lxappearance"] floating enable border normal
