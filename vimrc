@@ -174,6 +174,10 @@ let g:indentLine_enabled = 0
 let g:indentLine_char = '│'
 let g:indentLine_faster = 1
 
+" SuperTab
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -191,6 +195,7 @@ if has("autocmd")
     autocmd FileType cpp setlocal cindent fileformat=unix
     autocmd FileType c setlocal cindent fileformat=unix
     autocmd FileType java setlocal cindent ts=2 sts=2 sw=2 fileformat=unix
+    autocmd FileType python setlocal fileformat=unix
 
     " Strip trailing whitespace before saving
     autocmd BufWritePre * call StripTrailingWhitespace()
@@ -200,6 +205,14 @@ if has("autocmd")
 
     " For Java also, wit different style
     autocmd BufWritePost *.java silent !astyle --style=java -s2 -nq %
+
+    " Omnicomplete
+    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType cpp set omnifunc=ccomplete#Complete
+    autocmd FileType c set omnifunc=ccomplete#Complete
+    autocmd FileType python set omnifunc=pythoncomplete#Complete
 endif
 
 " =============================== Key bindings ==============================
