@@ -203,8 +203,8 @@ if has("autocmd")
     " Format C/C++ source codes with astyle after save
     autocmd BufWritePost *.[ch]p\\\{,2\} silent !astyle -nq %
 
-    " For Java also, wit different style
-    autocmd BufWritePost *.java silent !astyle --style=java -s2 -nq %
+    " For Java also, with different style
+    autocmd BufWritePost *.java silent !astyle --style=java -nq %
 
     " Omnicomplete
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
