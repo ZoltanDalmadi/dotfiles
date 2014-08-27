@@ -8,6 +8,5 @@ unpad-paren
 pad-header
 align-pointer=type
 align-reference=name
-remove-brackets
 close-templates
 max-code-length=80

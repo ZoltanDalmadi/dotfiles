@@ -87,6 +87,8 @@ Plugin 'slim-template/vim-slim'
 
 " Other utils
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'WolfgangMehner/c.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
@@ -149,8 +151,9 @@ endif
 set background=dark
 
 if !exists("vundle_not_installed")
-    let g:gruvbox_italicize_comments=0
-    colorscheme gruvbox
+    " let g:gruvbox_italicize_comments=0
+    " colorscheme gruvbox
+    colorscheme Tomorrow-Night
 else
     colorscheme ron
 endif
@@ -192,8 +195,8 @@ if has("autocmd")
     autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
-    autocmd FileType cpp setlocal cindent fileformat=unix
-    autocmd FileType c setlocal cindent fileformat=unix
+    autocmd FileType cpp setlocal cindent ts=2 sts=2 sw=2 fileformat=unix
+    autocmd FileType c setlocal cindent ts=2 sts=2 sw=2 fileformat=unix
     autocmd FileType java setlocal cindent ts=2 sts=2 sw=2 fileformat=unix
     autocmd FileType python setlocal fileformat=unix
 
