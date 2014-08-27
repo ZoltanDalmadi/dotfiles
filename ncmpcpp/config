@@ -466,13 +466,13 @@ mpd_music_dir = "~/Music"
 #
 #state_flags_color = "default"
 #
-main_window_color = "green"
+main_window_color = "blue"
 #
 #color1 = "white"
 #
 #color2 = "green"
 #
-main_window_highlight_color = "green"
+main_window_highlight_color = "blue"
 #
 #progressbar_color = "default"
 #
