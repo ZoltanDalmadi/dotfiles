@@ -85,16 +85,21 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'mattn/emmet-vim'
 Plugin 'slim-template/vim-slim'
 
+" Useful for C/C++
+Plugin 'WolfgangMehner/c.vim'
+Plugin 'majutsushi/tagbar'
+
+" Fast yaml
+Plugin 'stephpy/vim-yaml'
+
 " Other utils
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'WolfgangMehner/c.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'godlygeek/tabular'
 Plugin 'Yggdroot/indentLine'
-Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-scripts/hexHighlight.vim'
 Plugin 'chrisbra/NrrwRgn'
