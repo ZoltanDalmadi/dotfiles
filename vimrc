@@ -115,6 +115,7 @@ set autochdir          " Change directory to the current buffer when opening
 set autowrite          " Auto save before commands like next and make
 set ttyfast            " Smoother changes
 set cursorline         " Highlight current line
+set relativenumber     " Show line numbers relative to cursor
 set number             " Show line numbers
 set expandtab          " Convert tabs to spaces
 set shiftwidth=4       " Number of spaces in autoindent
@@ -156,9 +157,9 @@ endif
 set background=dark
 
 if !exists("vundle_not_installed")
-    " let g:gruvbox_italicize_comments=0
-    " colorscheme gruvbox
-    colorscheme Tomorrow-Night
+    let g:gruvbox_italicize_comments=0
+    colorscheme gruvbox
+    " colorscheme Tomorrow-Night
 else
     colorscheme ron
 endif

@@ -42,15 +42,15 @@ colors:
 
 window_colors:
   focused:
-    border:         'brightgreen'
-    background:     'brightgreen'
+    border:         'light4'
+    background:     'light4'
     text:           'dark0'
-    indicator:      'brightgreen'
+    indicator:      'medium'
   focused_inactive:
     border:         'dark1'
     background:     'dark1'
-    text:           'light2'
-    indicator:      'brightpurple'
+    text:           'dark4'
+    indicator:      'medium'
   unfocused:
     border:         'dark1'
     background:     'dark1'
@@ -62,22 +62,22 @@ window_colors:
     text:           'dark1'
     indicator:      'brightred'
 bar_colors:
-  separator:        'brightpurple'
+  separator:        'light4'
   background:       'dark0'
-  statusline:       'brightblue'
+  statusline:       'medium'
   focused_workspace:
-    border:         'brightgreen'
-    background:     'brightgreen'
+    border:         'light4'
+    background:     'light4'
     text:           'dark0'
   active_workspace:
-    border:         'dark1'
-    background:     'dark1'
+    border:         'light4'
+    background:     'light4'
     text:           'light1'
   inactive_workspace:
     border:         'dark1'
     background:     'dark1'
-    text:           'light1'
+    text:           'dark4'
   urgent_workspace:
     border:         'brightorange'
     background:     'brightorange'
-    text:           'dark1'
+    text:           'dark0'
