@@ -93,7 +93,7 @@ urxvt.boldFont:   -misc-tamsyn-bold-r-normal--14-101-100-100-c-70-iso8859-1
 
 ! Transparency ---------------------------------------------------------
 urxvt.depth:        32
-urvxt.background:   [95]#282828
+urxvt.background:   [95]#282828
 
 ! Hide scrollbar ------------------------------------------------------------
 urxvt.scrollBar:    false
