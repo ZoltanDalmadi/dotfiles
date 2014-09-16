@@ -159,7 +159,6 @@ set background=dark
 if !exists("vundle_not_installed")
     let g:gruvbox_italicize_comments=0
     colorscheme gruvbox
-    " colorscheme Tomorrow-Night
 else
     colorscheme ron
 endif
@@ -209,8 +208,8 @@ if has("autocmd")
     " Strip trailing whitespace before saving
     autocmd BufWritePre * call StripTrailingWhitespace()
 
-    " Format C/C++ source codes with astyle after save
-    autocmd BufWritePost *.[ch]p\\\{,2\} silent !astyle -nq %
+    " Format C/C++/C# source codes with astyle after save
+    autocmd BufWritePost *.[ch][p\\\{,2\}s] silent !astyle -nq %
 
     " For Java also, with different style
     autocmd BufWritePost *.java silent !astyle --style=java -nq %
@@ -240,10 +239,10 @@ nnoremap <F8> :tabnext<CR>
 nnoremap <F9> :Make<CR>
 
 " Easier increment/decrement
-nmap + <C-a>
-nmap <kPlus> <C-a>
-nmap - <C-x>
-nmap <kMinus> <C-x>
+nnoremap + <C-a>
+nnoremap <kPlus> <C-a>
+nnoremap - <C-x>
+nnoremap <kMinus> <C-x>
 
 " Toggle Tagbar
 nnoremap <F11> :TagbarToggle<CR>
