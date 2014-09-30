@@ -208,8 +208,8 @@ if has("autocmd")
     " Strip trailing whitespace before saving
     autocmd BufWritePre * call StripTrailingWhitespace()
 
-    " Format C/C++/C# source codes with astyle after save
-    autocmd BufWritePost *.[ch][p\\\{,2\}s] silent !astyle -nq %
+    " Format C/C++ source codes with astyle after save
+    autocmd BufWritePost *.[ch]p\\\{,2\} silent !astyle -nq %
 
     " For Java also, with different style
     autocmd BufWritePost *.java silent !astyle --style=java -nq %
