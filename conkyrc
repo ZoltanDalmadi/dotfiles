@@ -77,7 +77,8 @@ TEXT
  { "full_text" : " ê [${mpd_status}] ${mpd_smart} (volume: ${mpd_vol}%) " },
  ${endif}
  { "full_text" : " ¨ Free ${fs_free /} " },
- { "full_text" : " µ CPU ${cpu cpu0}% " },
+ { "full_text" : " µ CPU ${cpu}% " },
  { "full_text" : " Î RAM ${mem} " },
+ { "full_text" : " ð BAT ${battery_short} ", "color": ${if_match ${battery_percent}<15}"\#fb4934"${else}${if_match ${battery_percent}<50}"\#fabd2f"${else}"\#b8bb26"${endif}${endif} },
  { "full_text" : " È ${time %a %F < %R} " }
  ]
