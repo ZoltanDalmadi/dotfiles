@@ -71,6 +71,8 @@ _isroot=false
     else
       export EDITOR="nano"
     fi
+
+    export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
   #}}}
   ## BASH HISTORY #{{{
     # make multiple shells share the same history file
