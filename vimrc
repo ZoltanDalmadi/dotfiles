@@ -138,7 +138,7 @@ if GUI()
     if WINDOWS()
         set guifont=Tamsyn7x14:h9:cOEM
     else
-        set guifont=Tamsyn\ 10.5
+        set guifont=Tamsyn\ 12
     endif
 
     set guiheadroom=0         " Stretch gui to full window
