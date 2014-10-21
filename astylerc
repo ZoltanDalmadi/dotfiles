@@ -6,7 +6,7 @@ break-blocks
 pad-oper
 unpad-paren
 pad-header
-align-pointer=type
-align-reference=name
+align-pointer=name
+align-reference=type
 close-templates
 max-code-length=80
