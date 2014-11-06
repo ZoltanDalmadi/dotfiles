@@ -90,8 +90,11 @@
 ! Font setup ----------------------------------------------------------------
 ! urxvt.font:       -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1
 ! urxvt.boldFont:   -misc-tamsyn-bold-r-normal--14-101-100-100-c-70-iso8859-1
-urxvt.font:       -misc-tamsyn-medium-r-normal--16-116-100-100-c-80-iso8859-1
-urxvt.boldFont:   -misc-tamsyn-bold-r-normal--16-116-100-100-c-80-iso8859-1
+! urxvt.font:       -misc-tamsyn-medium-r-normal--16-116-100-100-c-80-iso8859-1
+! urxvt.boldFont:   -misc-tamsyn-bold-r-normal--16-116-100-100-c-80-iso8859-1
+urxvt.font:        xft:Source Code Pro:pixelsize=14
+urxvt.boldFont:    xft:Source Code Pro:bold:pixelsize=14
+urxvt.letterSpace: -2
 
 ! Transparency ---------------------------------------------------------
 urxvt.depth:        32
