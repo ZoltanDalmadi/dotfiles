@@ -84,6 +84,7 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'mattn/emmet-vim'
 Plugin 'slim-template/vim-slim'
+Plugin 'davidhalter/jedi-vim'
 
 " Useful for C/C++
 Plugin 'WolfgangMehner/c.vim'
