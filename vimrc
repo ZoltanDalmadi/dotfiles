@@ -106,6 +106,8 @@ Plugin 'vim-scripts/hexHighlight.vim'
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'oblitum/rainbow'
 Plugin 'justinmk/vim-sneak'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 filetype plugin indent on
