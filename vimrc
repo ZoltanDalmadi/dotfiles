@@ -70,6 +70,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
@@ -141,7 +142,7 @@ endif
 if GUI()
     " set font depending on platform
     if WINDOWS()
-        set guifont=Tamsyn7x14:h9:cOEM
+        set guifont=Tamsyn8x16:h9:cOEM
     else
         set guifont=Tamsyn\ 10.5
     endif
