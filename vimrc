@@ -71,11 +71,13 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'chriskempson/base16-vim'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
 
 " Airline & Tmux
 Plugin 'bling/vim-airline'
@@ -90,8 +92,9 @@ Plugin 'tfnico/vim-gradle'
 Plugin 'beyondmarc/glsl.vim'
 
 " Useful for C/C++
-Plugin 'WolfgangMehner/c.vim'
+" Plugin 'WolfgangMehner/c.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " Fast yaml
 Plugin 'stephpy/vim-yaml'
@@ -106,11 +109,11 @@ Plugin 'godlygeek/tabular'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-scripts/hexHighlight.vim'
-Plugin 'chrisbra/NrrwRgn'
 Plugin 'oblitum/rainbow'
 Plugin 'justinmk/vim-sneak'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'AndrewRadev/sideways.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -144,7 +147,7 @@ if GUI()
     if WINDOWS()
         set guifont=Tamsyn8x16:h9:cOEM
     else
-        set guifont=Tamsyn\ 10.5
+        set guifont=Tamsyn\ 16
     endif
 
     set guiheadroom=0         " Stretch gui to full window
@@ -189,8 +192,8 @@ let g:indentLine_char = '│'
 let g:indentLine_faster = 1
 
 " SuperTab
-let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,longest,preview
+" let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -198,6 +201,14 @@ let g:ctrlp_cmd = 'CtrlP'
 
 " sneak
 let g:sneak#streak = 1
+let g:sneak#s_next = 1
+
+" YouCompleteMe
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " ============================== Autocommands ===============================
 
@@ -255,11 +266,11 @@ nnoremap <F11> :TagbarToggle<CR>
 nnoremap <F10> :NERDTreeToggle<CR>
 
 " Moving lines
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-DOWN> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-nnoremap <A-UP> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-DOWN> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+nnoremap <C-UP> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
