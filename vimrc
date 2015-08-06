@@ -76,8 +76,7 @@ Plugin 'chriskempson/base16-vim'
 " Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-" Plugin 'ervandew/supertab'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'ervandew/supertab'
 
 " Airline & Tmux
 Plugin 'bling/vim-airline'
@@ -92,9 +91,10 @@ Plugin 'tfnico/vim-gradle'
 Plugin 'beyondmarc/glsl.vim'
 
 " Useful for C/C++
-" Plugin 'WolfgangMehner/c.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'vim-scripts/a.vim'
+Plugin 'Rip-Rip/clang_complete'
 
 " Fast yaml
 Plugin 'stephpy/vim-yaml'
@@ -104,16 +104,15 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'Raimondi/delimitMate'
 Plugin 'godlygeek/tabular'
-Plugin 'Yggdroot/indentLine'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'vim-scripts/hexHighlight.vim'
 Plugin 'oblitum/rainbow'
 Plugin 'justinmk/vim-sneak'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'AndrewRadev/sideways.vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()
 filetype plugin indent on
@@ -145,7 +144,7 @@ endif
 if GUI()
     " set font depending on platform
     if WINDOWS()
-        set guifont=Tamsyn8x16:h9:cOEM
+        set guifont=Consolas:h11:cEASTEUROPE
     else
         set guifont=Tamsyn\ 16
     endif
@@ -166,8 +165,9 @@ endif
 set background=dark
 
 if !exists("vundle_not_installed")
-    let g:gruvbox_italicize_comments=0
-    colorscheme gruvbox
+    " let g:gruvbox_italicize_comments=0
+    " colorscheme gruvbox
+    colorscheme base16-default
 else
     colorscheme ron
 endif
@@ -186,13 +186,8 @@ let g:tmuxline_separators = { 'left' : '',
                             \ 'right_alt' : '<',
                             \ 'space' : ' '}
 
-" indentLine
-let g:indentLine_enabled = 0
-let g:indentLine_char = '│'
-let g:indentLine_faster = 1
-
 " SuperTab
-" let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest
 
 " CtrlP
@@ -203,13 +198,6 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:sneak#streak = 1
 let g:sneak#s_next = 1
 
-" YouCompleteMe
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
-" let g:ycm_autoclose_preview_window_after_completion = 1
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-
 " ============================== Autocommands ===============================
 
 if has("autocmd")
@@ -218,6 +206,8 @@ if has("autocmd")
     autocmd FileType css setlocal ts=2 sts=2 sw=2
     autocmd FileType cpp setlocal cindent ts=2 sts=2 sw=2
     autocmd FileType c setlocal cindent ts=2 sts=2 sw=2
+    autocmd FileType hpp setlocal cindent ts=2 sts=2 sw=2
+    autocmd FileType h setlocal cindent ts=2 sts=2 sw=2
     autocmd FileType java setlocal cindent ts=2 sts=2 sw=2
 
     " Strip trailing whitespace before saving
@@ -235,6 +225,8 @@ if has("autocmd")
     autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType cpp set omnifunc=ccomplete#Complete
     autocmd FileType c set omnifunc=ccomplete#Complete
+    autocmd FileType hpp set omnifunc=ccomplete#Complete
+    autocmd FileType h set omnifunc=ccomplete#Complete
     autocmd FileType python set omnifunc=pythoncomplete#Complete
 endif
 
@@ -250,15 +242,6 @@ nnoremap <S-F6> :vert sbn<CR>
 nnoremap <F7> :tabprevious<CR>
 nnoremap <F8> :tabnext<CR>
 
-" requires vim-csupport
-nnoremap <F9> :Make<CR>
-
-" Easier increment/decrement
-nnoremap + <C-a>
-nnoremap <kPlus> <C-a>
-nnoremap - <C-x>
-nnoremap <kMinus> <C-x>
-
 " Toggle Tagbar
 nnoremap <F11> :TagbarToggle<CR>
 
@@ -267,9 +250,9 @@ nnoremap <F10> :NERDTreeToggle<CR>
 
 " Moving lines
 nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-DOWN> :m .+1<CR>==
+nnoremap <A-DOWN> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
-nnoremap <C-UP> :m .-2<CR>==
+nnoremap <A-UP> :m .-2<CR>==
 inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
