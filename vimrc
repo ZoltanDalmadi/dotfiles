@@ -72,34 +72,37 @@ Plugin 'w0ng/vim-hybrid'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'chriskempson/base16-vim'
+Plugin 'MaxSt/FlatColor'
+Plugin 'endel/vim-github-colorscheme'
+Plugin 'abra/vim-abra'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
 
-" Airline & Tmux
-Plugin 'bling/vim-airline'
-Plugin 'edkolev/tmuxline.vim'
-
 " Syntax bundles
-Plugin 'digitaltoad/vim-jade'
 Plugin 'mattn/emmet-vim'
-Plugin 'slim-template/vim-slim'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'tfnico/vim-gradle'
 Plugin 'beyondmarc/glsl.vim'
 
 " Useful for C/C++
 Plugin 'majutsushi/tagbar'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vim-scripts/a.vim'
-Plugin 'Rip-Rip/clang_complete'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+if WINDOWS()
+    Plugin 'Rip-Rip/clang_complete'
+else
+    Plugin 'Valloric/YouCompleteMe'
+    Plugin 'edkolev/tmuxline.vim'
+endif
 
 " Fast yaml
 Plugin 'stephpy/vim-yaml'
 
 " Other utils
+Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
@@ -150,9 +153,8 @@ if GUI()
     endif
 
     set guiheadroom=0         " Stretch gui to full window
-    set columns=120           " Default width
-    set lines=60              " Default height
-    set guioptions=ac         " Auto clipboard
+    set columns=210           " Default width
+    set lines=61              " Default height
     set guioptions-=m         " Hide menubar
     set guioptions-=T         " Hide toolbar
     set guioptions-=r         " Hide right scrollbar
@@ -165,9 +167,9 @@ endif
 set background=dark
 
 if !exists("vundle_not_installed")
-    " let g:gruvbox_italicize_comments=0
-    " colorscheme gruvbox
-    colorscheme base16-default
+    let g:gruvbox_italicize_comments=0
+    colorscheme gruvbox
+    " colorscheme github
 else
     colorscheme ron
 endif
@@ -176,8 +178,10 @@ endif
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tmuxline#enabled = 1
-let airline#extensions#tmuxline#snapshot_file = "~/.tmuxline"
+if !WINDOWS()
+    let g:airline#extensions#tmuxline#enabled = 1
+    let airline#extensions#tmuxline#snapshot_file = "~/.tmuxline"
+endif
 
 " tmuxLine
 let g:tmuxline_separators = { 'left' : '',
@@ -197,6 +201,14 @@ let g:ctrlp_cmd = 'CtrlP'
 " sneak
 let g:sneak#streak = 1
 let g:sneak#s_next = 1
+
+" clang_complete
+let g:clang_hl_errors = 0
+let g:clang_snippets = 1
+let g:clang_snippets_engine = 'ultisnips'
+
+" Syntastic
+let g:syntastic_cpp_compiler_options="-std=c++14"
 
 " ============================== Autocommands ===============================
 
@@ -223,10 +235,6 @@ if has("autocmd")
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
     autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType cpp set omnifunc=ccomplete#Complete
-    autocmd FileType c set omnifunc=ccomplete#Complete
-    autocmd FileType hpp set omnifunc=ccomplete#Complete
-    autocmd FileType h set omnifunc=ccomplete#Complete
     autocmd FileType python set omnifunc=pythoncomplete#Complete
 endif
 
@@ -257,3 +265,6 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+noremap <S-UP> <NOP>
+noremap <S-DOWN> <NOP>
