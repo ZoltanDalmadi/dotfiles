@@ -72,29 +72,36 @@ Plugin 'w0ng/vim-hybrid'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'chriskempson/base16-vim'
+Plugin 'zsoltf/vim-maui'
+Plugin 'jordwalke/flatlandia'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'ervandew/supertab'
+if WINDOWS()
+    Plugin 'ervandew/supertab'
+else
+    Plugin 'Valloric/YouCompleteMe'
+endif
 
 " Airline & Tmux
 Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
 
 " Syntax bundles
-Plugin 'digitaltoad/vim-jade'
 Plugin 'mattn/emmet-vim'
-Plugin 'slim-template/vim-slim'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'tfnico/vim-gradle'
 Plugin 'beyondmarc/glsl.vim'
+Plugin 'jrozner/vim-antlr'
 
 " Useful for C/C++
 Plugin 'majutsushi/tagbar'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vim-scripts/a.vim'
-Plugin 'Rip-Rip/clang_complete'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+if WINDOWS()
+    Plugin 'Rip-Rip/clang_complete'
+endif
 
 " Fast yaml
 Plugin 'stephpy/vim-yaml'
@@ -108,11 +115,13 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'godlygeek/tabular'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'oblitum/rainbow'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'justinmk/vim-sneak'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'AndrewRadev/sideways.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -146,7 +155,7 @@ if GUI()
     if WINDOWS()
         set guifont=Consolas:h11:cEASTEUROPE
     else
-        set guifont=Tamsyn\ 16
+        set guifont=Fira\ Mono\ 11
     endif
 
     set guiheadroom=0         " Stretch gui to full window
@@ -165,9 +174,8 @@ endif
 set background=dark
 
 if !exists("vundle_not_installed")
-    " let g:gruvbox_italicize_comments=0
-    " colorscheme gruvbox
-    colorscheme base16-default
+    let g:gruvbox_italicize_comments=0
+    colorscheme gruvbox
 else
     colorscheme ron
 endif
@@ -176,8 +184,6 @@ endif
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tmuxline#enabled = 1
-let airline#extensions#tmuxline#snapshot_file = "~/.tmuxline"
 
 " tmuxLine
 let g:tmuxline_separators = { 'left' : '',
@@ -187,7 +193,10 @@ let g:tmuxline_separators = { 'left' : '',
                             \ 'space' : ' '}
 
 " SuperTab
-let g:SuperTabDefaultCompletionType = "context"
+if WINDOWS()
+    let g:SuperTabDefaultCompletionType = "context"
+endif
+
 set completeopt=menuone,longest
 
 " CtrlP
@@ -197,6 +206,13 @@ let g:ctrlp_cmd = 'CtrlP'
 " sneak
 let g:sneak#streak = 1
 let g:sneak#s_next = 1
+
+" YouCompleteMe
+if !WINDOWS()
+    let g:ycm_key_list_select_completion=[]
+    let g:ycm_key_list_previous_completion=[]
+    let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+endif
 
 " ============================== Autocommands ===============================
 
