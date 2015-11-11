@@ -123,6 +123,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'AndrewRadev/sideways.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rking/ag.vim'
+Plugin 'moll/vim-bbye'
 
 call vundle#end()
 filetype plugin indent on
@@ -148,6 +149,9 @@ set fileencoding=utf-8 " Save files with utf8 encoding
 if has('mouse')
   set mouse=a
 endif
+
+" set , as mapleader
+let mapleader = ","
 
 " ================================ GUI setup ================================
 
@@ -184,6 +188,7 @@ endif
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " tmuxLine
 let g:tmuxline_separators = { 'left' : '',
@@ -251,6 +256,9 @@ if has("autocmd")
 endif
 
 " =============================== Key bindings ==============================
+
+" type ,ev to edit vimrc
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
 
 " Buffers and tabs
 nnoremap <F5> :bp<CR>
