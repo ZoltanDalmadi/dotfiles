@@ -63,6 +63,9 @@ _isroot=false
       export PATH=$GEM_DIR:$PATH
     fi
   fi
+  if [[ -d ~/bin ]]; then
+    export PATH=~/bin:$PATH
+  fi
   ## EDITOR #{{{
     if which vim &>/dev/null; then
       export EDITOR="vim"
@@ -160,6 +163,9 @@ _isroot=false
     alias ll='ls -alh'
     alias la='ll -A'
     alias lm='la | more'
+  #}}}
+  # MINECRAFT SERVER {{{
+    alias emcserver='vim /home/dmz/Downloads/minecraft_server/server.properties'
   #}}}
   # GIT {{{
     alias Gbranch="git branch"
