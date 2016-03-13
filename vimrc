@@ -76,6 +76,8 @@ Plugin 'zsoltf/vim-maui'
 Plugin 'jordwalke/flatlandia'
 Plugin 'MaxSt/FlatColor'
 Plugin 'endel/vim-github-colorscheme'
+Plugin 'joshdick/onedark.vim'
+Plugin 'joshdick/airline-onedark.vim'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
