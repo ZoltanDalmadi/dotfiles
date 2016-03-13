@@ -76,7 +76,6 @@ Plugin 'zsoltf/vim-maui'
 Plugin 'jordwalke/flatlandia'
 Plugin 'MaxSt/FlatColor'
 Plugin 'endel/vim-github-colorscheme'
-Plugin 'abra/vim-abra'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
