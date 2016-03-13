@@ -183,8 +183,7 @@ endif
 set background=dark
 
 if !exists("vundle_not_installed")
-    let g:gruvbox_italicize_comments=0
-    colorscheme gruvbox
+    colorscheme PaperColor
 else
     colorscheme ron
 endif
@@ -226,7 +225,6 @@ else
 " YouCompleteMe
     let g:ycm_key_list_select_completion=[]
     let g:ycm_key_list_previous_completion=[]
-    let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 endif
 
 " Syntastic
