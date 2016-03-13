@@ -1,0 +1,3 @@
+urxvt.font:        xft:Fira Mono:pixelsize=14:hinting=true
+urxvt.boldFont:    xft:Fira Mono:bold:pixelsize=14:hinting:true
+urxvt.letterSpace: -2

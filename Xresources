@@ -1,66 +1,21 @@
-! Color Scheme --------------------------------------------------------------
-! Author: morhetz <morhetz@gmail.com>
-! Source: https://github.com/morhetz/gruvbox-generalized
-
-*background: #282828
-*foreground: #ebdbb2
-
-! Black + DarkGrey
-*color0:  #282828
-*color8:  #7c6f64
-
-! DarkRed + Red
-*color1:  #cc241d
-*color9:  #fb4934
-
-! DarkGreen + Green
-*color2:  #98971a
-*color10: #b8bb26
-
-! DarkYellow + Yellow
-*color3:  #d79921
-*color11: #fabd2f
-
-! DarkBlue + Blue
-*color4:  #458588
-*color12: #83a598
-
-! DarkMagenta + Magenta
-*color5:  #b16286
-*color13: #d3869b
-
-! DarkCyan + Cyan
-*color6:  #689d6a
-*color14: #8ec07c
-
-! LightGrey + White
-*color7:  #bdae93
-*color15: #ebdbb2
+! Color Theme --------------------------------------------------------------
+#include "urxvt_theme"
 
 ! Font setup ----------------------------------------------------------------
-! urxvt.font:       -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1
-! urxvt.boldFont:   -misc-tamsyn-bold-r-normal--14-101-100-100-c-70-iso8859-1
-! urxvt.font:       -misc-tamsyn-medium-r-normal--16-116-100-100-c-80-iso8859-1
-! urxvt.boldFont:   -misc-tamsyn-bold-r-normal--16-116-100-100-c-80-iso8859-1
-! urxvt.font:        xft:Source Code Pro:pixelsize=14:hinting=true
-! urxvt.boldFont:    xft:Source Code Pro:bold:pixelsize=14:hinting:true
-urxvt.font:        xft:Fira Mono:pixelsize=14:hinting=true
-urxvt.boldFont:    xft:Fira Mono:bold:pixelsize=14:hinting:true
-urxvt.letterSpace: -2
+#include "urxvt_font"
 
-! Transparency ---------------------------------------------------------
+! Transparency ----------------------------------------------------------------
 urxvt.depth:        32
-urxvt.background:   [95]#282828
 
-! Hide scrollbar ------------------------------------------------------------
+! Hide scrollbar --------------------------------------------------------------
 urxvt.scrollBar:    false
 
-! Default size --------------------------------------------------------------
+! Default size ----------------------------------------------------------------
 urxvt.geometry:     120x40
 
-! No scrollback -------------------------------------------------------------
+! No scrollback ---------------------------------------------------------------
 urxvt.saveLines:    0
 
-! For tmux ------------------------------------------------------------------
+! For tmux --------------------------------------------------------------------
 urxvt.loginShell:   true
 urxvt.urgentOnBell: true
