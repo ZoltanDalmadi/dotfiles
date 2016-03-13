@@ -113,6 +113,8 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
 Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate'
 Plugin 'godlygeek/tabular'
@@ -229,6 +231,12 @@ endif
 " Syntastic
 let g:syntastic_cpp_compiler_options="-std=c++14"
 
+" vim-session
+let g:session_directory = "~/.vim/sessions"
+let g:session_autoload = "no"
+let g:session_autosave = "no"
+let g:session_command_aliases = 1
+
 " ============================== Autocommands ===============================
 
 if has("autocmd")
@@ -277,6 +285,12 @@ nnoremap <F11> :TagbarToggle<CR>
 
 " Toggle NERDTree
 nnoremap <F10> :NERDTreeToggle<CR>
+
+" Session management
+nnoremap <leader>so :OpenSession
+nnoremap <leader>ss :SaveSession<space>
+nnoremap <leader>sd :DeleteSession<CR>
+nnoremap <leader>sc :CloseSession<CR>
 
 " Moving lines
 nnoremap <C-j> :m .+1<CR>==
