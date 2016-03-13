@@ -110,6 +110,7 @@ Plugin 'stephpy/vim-yaml'
 
 " Other utils
 Plugin 'bling/vim-airline'
+Plugin 'rhysd/vim-clang-format'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -252,12 +253,6 @@ if has("autocmd")
     " Strip trailing whitespace before saving
     autocmd BufWritePre * call StripTrailingWhitespace()
 
-    " Format C/C++ source codes with astyle after save
-    autocmd BufWritePost *.[ch]p\\\{,2\} silent !astyle -nq %
-
-    " For Java also, with different style
-    autocmd BufWritePost *.java silent !astyle --style=java -nq %
-
     " Omnicomplete
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -269,6 +264,9 @@ endif
 
 " type ,ev to edit vimrc
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
+
+" Format file or range using clang-format
+nnoremap <leader>cf :ClangFormat<CR>
 
 " Buffers and tabs
 nnoremap <F5> :bp<CR>
