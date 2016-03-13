@@ -110,6 +110,7 @@ Plugin 'stephpy/vim-yaml'
 
 " Other utils
 Plugin 'bling/vim-airline'
+Plugin 'gcmt/taboo.vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
