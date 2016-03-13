@@ -27,5 +27,4 @@ select font in ${fonts[@]}; do
     break;
 done
 
-script_dir=$(dirname $(readlink -f $0))
 xrdb -I$script_dir $script_dir/Xresources
