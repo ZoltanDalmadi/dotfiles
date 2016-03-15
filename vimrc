@@ -73,12 +73,10 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'chriskempson/base16-vim'
 Plugin 'zsoltf/vim-maui'
-Plugin 'zsoltf/vim-maui-airline'
 Plugin 'jordwalke/flatlandia'
 Plugin 'MaxSt/FlatColor'
 Plugin 'endel/vim-github-colorscheme'
 Plugin 'joshdick/onedark.vim'
-Plugin 'joshdick/airline-onedark.vim'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
@@ -98,6 +96,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'rhysd/vim-clang-format'
 if WINDOWS()
     Plugin 'Rip-Rip/clang_complete'
 else
@@ -109,9 +108,8 @@ endif
 Plugin 'stephpy/vim-yaml'
 
 " Other utils
-Plugin 'bling/vim-airline'
 Plugin 'gcmt/taboo.vim'
-Plugin 'rhysd/vim-clang-format'
+Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -164,9 +162,9 @@ let mapleader = ","
 if GUI()
     " set font depending on platform
     if WINDOWS()
-        set guifont=Consolas:h11:cEASTEUROPE
+        set guifont=InputMonoCondensed:h12:cEASTEUROPE
     else
-        set guifont=Fira\ Mono\ 11
+        set guifont=Input\ Mono\ Condensed\\,\ Condensed\ 12
     endif
 
     set guiheadroom=0         " Stretch gui to full window
@@ -174,6 +172,7 @@ if GUI()
     set lines=61              " Default height
     set guioptions-=m         " Hide menubar
     set guioptions-=T         " Hide toolbar
+    set guioptions-=e         " Console style tab bar
     set guioptions-=r         " Hide right scrollbar
     set guioptions-=L         " Hide left scrollbar
     set guicursor=a:blinkon0  " Disable cursor blink
