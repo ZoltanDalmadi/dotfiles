@@ -43,7 +43,6 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Completion
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-Plug 'carlitux/deoplete-ternjs'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'gavocanov/vim-js-indent'
 
