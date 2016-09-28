@@ -87,6 +87,7 @@ colorscheme one
 
 let g:airline_theme='one'
 let g:airline#extensions#tabline#enabled = 1
+
 " sneak
 let g:sneak#streak = 1
 let g:sneak#s_next = 1
@@ -145,3 +146,11 @@ noremap <S-DOWN> <NOP>
 " fucking del key fix in fucking st
 map <F1> <del>
 map! <F1> <del>
+
+if (has("nvim"))
+	let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+if (has("termguicolors"))
+	set termguicolors
+endif
