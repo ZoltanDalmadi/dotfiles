@@ -79,20 +79,17 @@ let mapleader = ","
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
-let g:tern_request_timeout = 1
-let g:tern_show_signature_in_pum = 0
 
 set background=dark
-colorscheme PaperColor
-let g:lightline = {}
-let g:lightline.colorscheme = 'PaperColor'
+colorscheme one
 
+let g:airline_theme='one'
+let g:airline#extensions#tabline#enabled = 1
 " sneak
 let g:sneak#streak = 1
 let g:sneak#s_next = 1
 
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 " ============================== Autocommands ===============================
 
