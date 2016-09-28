@@ -133,7 +133,7 @@ for_window [instance="sxiv"] floating enable border normal
 
 # Programs on specific workspaces ===========================================
 assign [class="URxvt"] 1:term
-assign [class="Chromium"] 2:www
+assign [class="chromium"] 2:www
 assign [class="Dwb"] 2:www
 assign [class="Gvim"] 3:vim
 
