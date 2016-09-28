@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Bar icon font
-font -misc-tamsynmod-bold-r-normal--14-101-100-100-c-70-iso8859-1
+font -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
