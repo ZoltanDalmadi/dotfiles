@@ -56,6 +56,6 @@ bar_colors:
     background:     'o_gray2'
     text:           'o_foreground'
   urgent_workspace:
-    border:         'o_red2'
-    background:     'o_red2'
+    border:         'o_yellow1'
+    background:     'o_yellow1'
     text:           'o_background'
