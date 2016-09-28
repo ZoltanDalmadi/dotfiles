@@ -181,7 +181,7 @@ exec --no-startup-id nitrogen --restore
 bar {
   position top
   strip_workspace_numbers yes
-  status_command ~/.i3/conky-i3bar
+  status_command ~/.config/i3/conky-i3bar
   # (i3-style)
   colors {
     separator #a89984
