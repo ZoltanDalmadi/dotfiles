@@ -19,7 +19,7 @@ short_units yes
 # The value is one of up, link or address, to check for the interface
 # being solely up, being up and having link or being up, having link
 # and an assigned IP address.
-if_up_strictness address
+# if_up_strictness address
 
 # Add spaces to keep things from moving about?  This only affects certain objects.
 # use_spacer should have an argument of left, right, or none
@@ -27,7 +27,7 @@ use_spacer left
 
 # number of cpu samples to average
 # set to 1 to disable averaging
-cpu_avg_samples 2
+cpu_avg_samples 3
 
 # Stuff after 'TEXT' will be formatted on screen
 
@@ -35,21 +35,43 @@ TEXT
 
 # JSON for i3bar
 
- ,[
-# ${if_mpd_playing}
-# { "full_text" : " ê [${mpd_status}] ${mpd_smart} (volume: ${mpd_vol}%) " },
-# ${endif}
- {
-   "full_text" : " Free ${fs_free} "
- },
- {
-   "full_text" : " CPU ${cpu}% "
- },
- {
-   "full_text" : " RAM ${mem} "
- },
- {
-   "full_text" : " BAT ${battery_short} ",
+,[
+  {
+   "full_text" : "   Temp${acpitemp}C ",
+   "color": ${if_match ${acpitemp}<45}
+              "\#98c379"
+            ${else} ${if_match ${acpitemp}<70}
+              "\#d19a66"
+            ${else}
+              "\#be5046"
+            ${endif}
+            ${endif}
+  },
+  {
+   "full_text" : "   Free ${fs_free} "
+  },
+  {
+   "full_text" : "   CPU ${cpu cpu0}% "
+  },
+  {
+   "full_text" : "   RAM ${mem} "
+  },
+  {
+   "full_text" : ${if_match ${battery_percent}<20}
+                   "   ${battery_short} "
+                 ${else} ${if_match ${battery_percent}<40}
+                   "   ${battery_short} "
+                 ${else} ${if_match ${battery_percent}<60}
+                   "   ${battery_short} "
+                 ${else} ${if_match ${battery_percent}<80}
+                   "   ${battery_short} "
+                 ${else}
+                   "   ${battery_short} "
+                 ${endif}
+                 ${endif}
+                 ${endif}
+                 ${endif},
+
    "color": ${if_match ${battery_percent}<30}
               "\#be5046"
             ${else} ${if_match ${battery_percent}<75}
@@ -58,8 +80,8 @@ TEXT
               "\#98c379"
             ${endif}
             ${endif}
- },
- {
-   "full_text" : " ${time %a %F < %R} "
- }
- ]
+  },
+  {
+   "full_text" : "   ${time %a %F   %R} "
+  }
+]
