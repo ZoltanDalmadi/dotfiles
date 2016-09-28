@@ -31,54 +31,35 @@ cpu_avg_samples 2
 
 # Stuff after 'TEXT' will be formatted on screen
 
-# Tamsyn10x20b.pcf -misc-tamsyn-bold-r-normal--20-145-100-100-c-100-iso8859-1
-# Tamsyn10x20r.pcf -misc-tamsyn-medium-r-normal--20-145-100-100-c-100-iso8859-1
-# Tamsyn5x9b.pcf -misc-tamsyn-bold-r-normal--9-65-100-100-c-50-iso8859-1
-# Tamsyn5x9r.pcf -misc-tamsyn-medium-r-normal--9-65-100-100-c-50-iso8859-1
-# Tamsyn6x12b.pcf -misc-tamsyn-bold-r-normal--12-87-100-100-c-60-iso8859-1
-# Tamsyn6x12r.pcf -misc-tamsyn-medium-r-normal--12-87-100-100-c-60-iso8859-1
-# Tamsyn7x13b.pcf -misc-tamsyn-bold-r-normal--13-94-100-100-c-70-iso8859-1
-# Tamsyn7x13r.pcf -misc-tamsyn-medium-r-normal--13-94-100-100-c-70-iso8859-1
-# Tamsyn7x14b.pcf -misc-tamsyn-bold-r-normal--14-101-100-100-c-70-iso8859-1
-# Tamsyn7x14r.pcf -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1
-# Tamsyn8x15b.pcf -misc-tamsyn-bold-r-normal--15-108-100-100-c-80-iso8859-1
-# Tamsyn8x15r.pcf -misc-tamsyn-medium-r-normal--15-108-100-100-c-80-iso8859-1
-# Tamsyn8x16b.pcf -misc-tamsyn-bold-r-normal--16-116-100-100-c-80-iso8859-1
-# Tamsyn8x16r.pcf -misc-tamsyn-medium-r-normal--16-116-100-100-c-80-iso8859-1
-# tamsynmod6x12b.pcf -misc-tamsynmod-bold-r-normal--12-87-100-100-c-60-iso8859-1
-# tamsynmod6x12r.pcf -misc-tamsynmod-medium-r-normal--12-87-100-100-c-60-iso8859-1
-# tamsynmod7x14b.pcf -misc-tamsynmod-bold-r-normal--14-101-100-100-c-70-iso8859-1
-# tamsynmod7x14r.pcf -misc-tamsynmod-medium-r-normal--14-101-100-100-c-70-iso8859-1
-# tamsynmod8x15b.pcf -misc-tamsynmod-bold-r-normal--15-108-100-100-c-80-iso8859-1
-# tamsynmod8x15r.pcf -misc-tamsynmod-medium-r-normal--15-108-100-100-c-80-iso8859-1
-# tamsynmod8x17b.pcf -misc-tamsynmod-bold-r-normal--17-123-100-100-c-80-iso8859-1
-# tamsynmod8x17r.pcf -misc-tamsynmod-medium-r-normal--17-123-100-100-c-80-iso8859-1
-
-# icons for tamsynmod font
-# ¡ 161 | ­ 173 | ¹ 185 | Å 197 | Ñ 209 | Ý 221 | é 233 | õ 245 |
-# ¢ 162 | ® 174 | º 186 | Æ 198 | Ò 210 | Þ 222 | ê 234 | ö 246 |
-# £ 163 | ¯ 175 | » 187 | Ç 199 | Ó 211 | ß 223 | ë 235 | ÷ 247 |
-# ¤ 164 | ° 176 | ¼ 188 | È 200 | Ô 212 | à 224 | ì 236 | ø 248 |
-# ¥ 165 | ± 177 | ½ 189 | É 201 | Õ 213 | á 225 | í 237 | ù 249 |
-# ¦ 166 | ² 178 | ¾ 190 | Ê 202 | Ö 214 | â 226 | î 238 | ú 250 |
-# § 167 | ³ 179 | ¿ 191 | Ë 203 | × 215 | ã 227 | ï 239 | û 251 |
-# ¨ 168 | ´ 180 | À 192 | Ì 204 | Ø 216 | ä 228 | ð 240 | ü 252 |
-# © 169 | µ 181 | Á 193 | Í 205 | Ù 217 | å 229 | ñ 241 | ý 253 |
-# ª 170 | ¶ 182 | Â 194 | Î 206 | Ú 218 | æ 230 | ò 242 | þ 254 |
-# « 171 | · 183 | Ã 195 | Ï 207 | Û 219 | ç 231 | ó 243 | ÿ 255 |
-# ¬ 172 | ¸ 184 | Ä 196 | Ð 208 | Ü 220 | è 232 | ô 244 |
-
 TEXT
 
 # JSON for i3bar
 
  ,[
- ${if_mpd_playing}
- { "full_text" : " ê [${mpd_status}] ${mpd_smart} (volume: ${mpd_vol}%) " },
- ${endif}
- { "full_text" : " ¨ Free ${fs_free /} " },
- { "full_text" : " µ CPU ${cpu}% " },
- { "full_text" : " Î RAM ${mem} " },
- { "full_text" : " ð BAT ${battery_short} ", "color": ${if_match ${battery_percent}<15}"\#fb4934"${else}${if_match ${battery_percent}<50}"\#fabd2f"${else}"\#b8bb26"${endif}${endif} },
- { "full_text" : " È ${time %a %F < %R} " }
+# ${if_mpd_playing}
+# { "full_text" : " ê [${mpd_status}] ${mpd_smart} (volume: ${mpd_vol}%) " },
+# ${endif}
+ {
+   "full_text" : " Free ${fs_free} "
+ },
+ {
+   "full_text" : " CPU ${cpu}% "
+ },
+ {
+   "full_text" : " RAM ${mem} "
+ },
+ {
+   "full_text" : " BAT ${battery_short} ",
+   "color": ${if_match ${battery_percent}<30}
+              "\#be5046"
+            ${else} ${if_match ${battery_percent}<75}
+              "\#d19a66"
+            ${else}
+              "\#98c379"
+            ${endif}
+            ${endif}
+ },
+ {
+   "full_text" : " ${time %a %F < %R} "
+ }
  ]
