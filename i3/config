@@ -8,7 +8,7 @@ font -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id st -e fish
 
 # kill focused window
 bindsym $mod+q kill
