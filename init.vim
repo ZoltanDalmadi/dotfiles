@@ -59,6 +59,8 @@ Plug 'justinmk/vim-sneak'
 Plug 'Raimondi/delimitMate'
 Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -106,6 +108,9 @@ autocmd FileType javascript setlocal ts=2 sw=2 omnifunc=tern#Complete
 
 " type ,ev to edit vimrc
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fw :Windows<CR>
 
 " Buffers and tabs
 nnoremap <F5> :bp<CR>
