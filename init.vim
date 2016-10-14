@@ -87,6 +87,7 @@ colorscheme one
 
 let g:airline_theme='one'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#whitespace#mixed_indent_algo = 2
 
 " sneak
 let g:sneak#streak = 1
