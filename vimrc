@@ -2,269 +2,138 @@
 
 " Detect platform
 silent function! WINDOWS()
-    return (has('win16') || has('win32') || has('win64'))
-endfunction
-
-" Detect GUI
-silent function! GUI()
-    return (has('gui_running'))
+	return (has('win16') || has('win32') || has('win64'))
 endfunction
 
 " Strip trailing whitespace
 function! StripTrailingWhitespace()
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " do the business:
-  %s/\s\+$//e
-  " Cleanup: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
+	" Preparation: save last search, and cursor position.
+	let _s=@/
+	let l = line(".")
+	let c = col(".")
+	" do the business:
+	%s/\s\+$//e
+	" Cleanup: restore previous search history, and cursor position
+	let @/=_s
+	call cursor(l, c)
 endfunction
 
-" ============================= Plugins (vundle) ============================
-
-set nocompatible
-filetype off
-
-if WINDOWS()
-    set rtp+=$VIM/bundle/vundle
-    let vundle_path=expand($VIM.'/bundle')
-else
-    set rtp+=~/.vim/bundle/vundle/
-    let vundle_path=expand($HOME.'/.vim/bundle')
-endif
-
-" First use (detects if vundle is installed, if not, installs it)
-let vundle_readme=expand(vundle_path.'/vundle/README.md')
-
-if !filereadable(vundle_readme)
-    let vundle_not_installed = 1
-
-    echo "Vundle is going to be installed."
-    echo "Please run \":PluginInstall\" afterwards, and restart VIM."
-    echo ""
-
-    if WINDOWS()
-        silent execute '!md '.vundle_path
-        let vundle_slash = '\'
-    else
-        silent execute '!mkdir -p '.vundle_path
-        let vundle_slash = '/'
-    endif
-
-    silent execute '!git clone https://github.com/gmarik/Vundle.vim '
-                    \.vundle_path.vundle_slash.'vundle'
-endif
-
-call vundle#begin(vundle_path)
-
-Plugin 'gmarik/vundle'
-
-" Sensible defaults
-Plugin 'tpope/vim-sensible'
+" ================================ Plugins ==================================
+call plug#begin()
 
 " Color schemes
-Plugin 'morhetz/gruvbox'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'chriskempson/base16-vim'
-Plugin 'zsoltf/vim-maui'
-Plugin 'jordwalke/flatlandia'
-Plugin 'MaxSt/FlatColor'
-Plugin 'endel/vim-github-colorscheme'
-Plugin 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
+Plug 'w0ng/vim-hybrid'
+Plug 'altercation/vim-colors-solarized'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'chriskempson/base16-vim'
+Plug 'zsoltf/vim-maui'
+Plug 'jordwalke/flatlandia'
+Plug 'MaxSt/FlatColor'
+Plug 'joshdick/onedark.vim'
 
 " Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-if WINDOWS()
-    Plugin 'ervandew/supertab'
-endif
-
-" Syntax bundles
-Plugin 'mattn/emmet-vim'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'beyondmarc/glsl.vim'
-Plugin 'jrozner/vim-antlr'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
 
 " Useful for C/C++
-Plugin 'majutsushi/tagbar'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'vim-scripts/a.vim'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'rhysd/vim-clang-format'
-if WINDOWS()
-    Plugin 'Rip-Rip/clang_complete'
-else
-    Plugin 'Valloric/YouCompleteMe'
-    Plugin 'edkolev/tmuxline.vim'
-endif
+Plug 'majutsushi/tagbar'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
-" Fast yaml
-Plugin 'stephpy/vim-yaml'
+" Completion
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'gavocanov/vim-js-indent'
 
 " Other utils
-Plugin 'gcmt/taboo.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
-Plugin 'tpope/vim-surround'
-Plugin 'Raimondi/delimitMate'
-Plugin 'godlygeek/tabular'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'oblitum/rainbow'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'justinmk/vim-sneak'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'AndrewRadev/sideways.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'rking/ag.vim'
-Plugin 'moll/vim-bbye'
+Plug 'gcmt/taboo.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-surround'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'airblade/vim-gitgutter'
+Plug 'AndrewRadev/sideways.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'justinmk/vim-sneak'
+Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " ============================== Basic options ==============================
 
 set autochdir          " Change directory to the current buffer when opening
 set autowrite          " Auto save before commands like next and make
-set ttyfast            " Smoother changes
+set autoread           " Auto read changes to buffer
 set cursorline         " Highlight current line
 set relativenumber     " Show line numbers relative to cursor
 set number             " Show line numbers
-set expandtab          " Convert tabs to spaces
 set shiftwidth=4       " Number of spaces in autoindent
 set tabstop=4          " Tab is 4 spaces wide
-set softtabstop=4      " Number of spaces to jump when tabbing or backspacing
 set nobackup           " Disable backups
 set hlsearch           " Highlight search matches
 set encoding=utf-8     " Editor encoding
 set fileencoding=utf-8 " Save files with utf8 encoding
-
-" Enable mouse (for terminal)
-if has('mouse')
-  set mouse=a
-endif
 
 " set , as mapleader
 let mapleader = ","
 
 " ================================ GUI setup ================================
 
-if GUI()
-    " set font depending on platform
-    if WINDOWS()
-        set guifont=InputMonoCondensed:h12:cEASTEUROPE
-    else
-        set guifont=Input\ Mono\ Condensed\\,\ Condensed\ 12
-    endif
-
-    set guiheadroom=0         " Stretch gui to full window
-    set columns=210           " Default width
-    set lines=61              " Default height
-    set guioptions-=m         " Hide menubar
-    set guioptions-=T         " Hide toolbar
-    set guioptions-=e         " Console style tab bar
-    set guioptions-=r         " Hide right scrollbar
-    set guioptions-=L         " Hide left scrollbar
-    set guicursor=a:blinkon0  " Disable cursor blink
+if WINDOWS()
+	set guifont=InputMonoCondensed:h12:cEASTEUROPE
+else
+	set guifont=Input\ Mono\ Condensed\\,\ Condensed\ 12
 endif
 
-" ============================ Colorscheme setup ============================
+set guiheadroom=0         " Stretch gui to full window
+set columns=210           " Default width
+set lines=61              " Default height
+set guioptions-=m         " Hide menubar
+set guioptions-=T         " Hide toolbar
+set guioptions-=e         " Console style tab bar
+set guioptions-=r         " Hide right scrollbar
+set guioptions-=L         " Hide left scrollbar
+set guicursor=a:blinkon0  " Disable cursor blink
 
 set background=dark
+colorscheme PaperColor
 
-if !exists("vundle_not_installed")
-    colorscheme PaperColor
-else
-    colorscheme ron
-endif
+" ============================ Plugin settings ==============================
 
-" ============================= Plugin settings =============================
-
-" airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-
-" tmuxLine
-let g:tmuxline_separators = { 'left' : '',
-                            \ 'left_alt': '>',
-                            \ 'right' : '',
-                            \ 'right_alt' : '<',
-                            \ 'space' : ' '}
-
-" SuperTab
-if WINDOWS()
-    let g:SuperTabDefaultCompletionType = "context"
-endif
-
-set completeopt=menuone,longest
-
-" CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" lightline
+let g:lightline = {}
+let g:lightline.colorscheme = 'PaperColor'
 
 " sneak
 let g:sneak#streak = 1
 let g:sneak#s_next = 1
 
-if WINDOWS()
-" clang_complete
-    let g:clang_hl_errors = 0
-    let g:clang_snippets = 1
-    let g:clang_snippets_engine = 'ultisnips'
-else
-" YouCompleteMe
-    let g:ycm_key_list_select_completion=[]
-    let g:ycm_key_list_previous_completion=[]
-endif
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Syntastic
-let g:syntastic_cpp_compiler_options="-std=c++14"
+let g:syntastic_javascript_checkers = ['eslint']
 
-" vim-session
-let g:session_directory = "~/.vim/sessions"
-let g:session_autoload = "no"
-let g:session_autosave = "no"
-let g:session_command_aliases = 1
+" supertab
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest
 
 " ============================== Autocommands ===============================
 
-if has("autocmd")
-    " Filetype specific indentations
-    autocmd FileType html setlocal ts=2 sts=2 sw=2
-    autocmd FileType css setlocal ts=2 sts=2 sw=2
-    autocmd FileType cpp setlocal cindent ts=2 sts=2 sw=2
-    autocmd FileType c setlocal cindent ts=2 sts=2 sw=2
-    autocmd FileType hpp setlocal cindent ts=2 sts=2 sw=2
-    autocmd FileType h setlocal cindent ts=2 sts=2 sw=2
-    autocmd FileType java setlocal cindent ts=2 sts=2 sw=2
+" Strip trailing whitespace before saving
+autocmd BufWritePre * call StripTrailingWhitespace()
 
-    " Strip trailing whitespace before saving
-    autocmd BufWritePre * call StripTrailingWhitespace()
+" html, css and js files have a tab width of 2
+autocmd FileType html,css,javascript setlocal ts=2 sw=2
 
-    " Omnicomplete
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
-endif
-
-" =============================== Key bindings ==============================
+" ============================== Key Commands ===============================
 
 " type ,ev to edit vimrc
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
-
-" Format file or range using clang-format
-nnoremap <leader>cf :ClangFormat<CR>
 
 " Buffers and tabs
 nnoremap <F5> :bp<CR>
@@ -282,12 +151,6 @@ nnoremap <F11> :TagbarToggle<CR>
 " Toggle NERDTree
 nnoremap <F10> :NERDTreeToggle<CR>
 
-" Session management
-nnoremap <leader>so :OpenSession
-nnoremap <leader>ss :SaveSession<space>
-nnoremap <leader>sd :DeleteSession<CR>
-nnoremap <leader>sc :CloseSession<CR>
-
 " Moving lines
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <A-DOWN> :m .+1<CR>==
@@ -298,5 +161,6 @@ inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" Unbind Shift-Up and Shift-Down
 noremap <S-UP> <NOP>
 noremap <S-DOWN> <NOP>
