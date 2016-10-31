@@ -518,3 +518,5 @@ _isroot=false
     fi
   #}}}
 #}}}
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
