@@ -31,12 +31,11 @@ Plug 'chriskempson/base16-vim'
 Plug 'zsoltf/vim-maui'
 Plug 'jordwalke/flatlandia'
 Plug 'MaxSt/FlatColor'
-Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'ervandew/supertab'
 
 " Useful for C/C++
 Plug 'majutsushi/tagbar'
@@ -45,13 +44,16 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " Completion
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'gavocanov/vim-js-indent'
+Plug 'ervandew/supertab'
+
+" Fuzzy finder
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Other utils
 Plug 'gcmt/taboo.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/sideways.vim'
@@ -64,7 +66,7 @@ call plug#end()
 
 " ============================== Basic options ==============================
 
-set autochdir          " Change directory to the current buffer when opening
+" set autochdir          " Change directory to the current buffer when opening
 set autowrite          " Auto save before commands like next and make
 set autoread           " Auto read changes to buffer
 set cursorline         " Highlight current line
@@ -79,6 +81,10 @@ set fileencoding=utf-8 " Save files with utf8 encoding
 
 " set , as mapleader
 let mapleader = ","
+
+" Color scheme
+set background=dark
+colorscheme PaperColor
 
 " ================================ GUI setup ================================
 
@@ -97,9 +103,6 @@ set guioptions-=e         " Console style tab bar
 set guioptions-=r         " Hide right scrollbar
 set guioptions-=L         " Hide left scrollbar
 set guicursor=a:blinkon0  " Disable cursor blink
-
-set background=dark
-colorscheme PaperColor
 
 " ============================ Plugin settings ==============================
 

@@ -30,7 +30,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'zsoltf/vim-maui'
 Plug 'jordwalke/flatlandia'
 Plug 'MaxSt/FlatColor'
-Plug 'joshdick/onedark.vim'
 Plug 'rakr/vim-one'
 
 " Snippets
@@ -42,9 +41,13 @@ Plug 'majutsushi/tagbar'
 Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Completion
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'gavocanov/vim-js-indent'
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Other utils
 Plug 'vim-airline/vim-airline'
@@ -57,16 +60,13 @@ Plug 'AndrewRadev/sideways.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
 Plug 'Raimondi/delimitMate'
-Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
 " ============================== Basic options ==============================
 
-set autochdir          " Change directory to the current buffer when opening
+" set autochdir          " Change directory to the current buffer when opening
 set autowrite          " Auto save before commands like next and make
 set autoread           " Auto read changes to buffer
 set cursorline         " Highlight current line
@@ -79,11 +79,14 @@ set nobackup           " Disable backups
 " set , as mapleader
 let mapleader = ","
 
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
+" Color scheme
 set background=dark
 colorscheme one
+
+" ============================ Plugin settings ==============================
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
 
 let g:airline_theme='one'
 let g:airline#extensions#tabline#enabled = 1
@@ -99,17 +102,19 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " Strip trailing whitespace before saving
 autocmd BufWritePre * call StripTrailingWhitespace()
+
+" For deoplete to close tip window automatically
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-let g:tern_show_argument_hints = 'on_hold'
-let g:tern_show_signature_in_pum = 1
+" html, css and js files have a tab width of 2
 autocmd FileType html,javascript setlocal ts=2 sw=2
-autocmd FileType javascript setlocal ts=2 sw=2 omnifunc=tern#Complete
 
 " ============================== Key Commands ===============================
 
 " type ,ev to edit vimrc
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
+
+" fzf
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fw :Windows<CR>
