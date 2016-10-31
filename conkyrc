@@ -74,7 +74,7 @@ TEXT
 
    "color": ${if_match ${battery_percent}<30}
               "\#be5046"
-            ${else} ${if_match ${battery_percent}<75}
+            ${else} ${if_match ${battery_percent}<60}
               "\#d19a66"
             ${else}
               "\#98c379"
