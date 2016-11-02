@@ -79,8 +79,8 @@ set nobackup           " Disable backups
 let mapleader = ","
 
 " Color scheme
-set background=dark
 colorscheme one
+set background=dark
 
 " ============================ Plugin settings ==============================
 
