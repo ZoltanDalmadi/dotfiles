@@ -87,9 +87,9 @@ colorscheme one
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
-let g:airline_theme='one'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#whitespace#mixed_indent_algo = 2
+" lightline
+let g:lightline = {}
+let g:lightline.colorscheme = 'one'
 
 " sneak
 let g:sneak#streak = 1
