@@ -51,7 +51,6 @@ Plug 'ervandew/supertab'
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Other utils
-Plug 'gcmt/taboo.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
