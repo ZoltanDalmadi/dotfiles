@@ -31,6 +31,7 @@ Plug 'zsoltf/vim-maui'
 Plug 'jordwalke/flatlandia'
 Plug 'MaxSt/FlatColor'
 Plug 'rakr/vim-one'
+Plug 'dracula/vim'
 
 " Snippets
 Plug 'SirVer/ultisnips'
