@@ -190,7 +190,7 @@ bar {
   # (i3-style)
   colors {
     separator #c678dd
-    background #282c34
+    background #2c323d
     statusline #abb2bf
     focused_workspace #528bff #528bff #282c34
     active_workspace #5c6370 #5c6370 #abb2bf
