@@ -88,7 +88,7 @@ let mapleader = ","
 
 " Color scheme
 set background=dark
-colorscheme PaperColor
+colorscheme one
 
 " ================================ GUI setup ================================
 
@@ -112,7 +112,7 @@ set guicursor=a:blinkon0  " Disable cursor blink
 
 " lightline
 let g:lightline = {}
-let g:lightline.colorscheme = 'PaperColor'
+let g:lightline.colorscheme = 'one'
 
 " sneak
 let g:sneak#streak = 1
