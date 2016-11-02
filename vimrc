@@ -21,6 +21,8 @@ endfunction
 " ================================ Plugins ==================================
 call plug#begin()
 
+Plug 'tpope/vim-sensible'
+
 " Color schemes
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
@@ -120,6 +122,7 @@ let g:sneak#s_next = 1
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_cpp_compiler_options ="-std=c++14"
 
 " supertab
 let g:SuperTabDefaultCompletionType = "context"
@@ -143,6 +146,9 @@ if !WINDOWS()
 	nnoremap <leader>ff :Files<CR>
 	nnoremap <leader>fb :Buffers<CR>
 	nnoremap <leader>fw :Windows<CR>
+else
+	nnoremap <leader>ff :CtrlP<CR>
+	nnoremap <leader>fb :CtrlPBuffer<CR>
 endif
 
 " Buffers and tabs
