@@ -1,19 +1,15 @@
---- config.def.h	2016-09-27 17:52:43.683096093 +0200
-+++ config.h	2016-09-28 12:04:14.169224576 +0200
-@@ -5,9 +5,10 @@
+--- config.def.h	2016-10-31 11:20:29.425904837 +0100
++++ config.h	2016-11-01 23:15:43.633731716 +0100
+@@ -5,7 +5,7 @@
   *
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
   */
 -static char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 +static char font[] = "Input Mono Condensed:pixelsize=16:antialias=true:autohint=true";
-+// static char font[] = "Fira Mono:pixelsize=14:antialias=true:autohint=true";
-+// static char font[] = "-misc-tamsyn-medium-r-normal--16-116-100-100-c-80-iso8859-1";
  static int borderpx = 2;
--
+ 
  /*
-  * What program is execed by st depends of these precedence rules:
-  * 1: program passed with -e
-@@ -84,42 +85,33 @@
+@@ -84,42 +84,33 @@
  
  /* Terminal colors (16 first used in escape sequence) */
  static const char *colorname[] = {
@@ -75,8 +71,3 @@
  
  /*
   * Default shape of cursor
-@@ -441,4 +433,3 @@
- 	" !\"#$%&'()*+,-./0123456789:;<=>?"
- 	"@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
- 	"`abcdefghijklmnopqrstuvwxyz{|}~";
--
