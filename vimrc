@@ -66,7 +66,6 @@ call plug#end()
 
 " ============================== Basic options ==============================
 
-" set autochdir          " Change directory to the current buffer when opening
 set autowrite          " Auto save before commands like next and make
 set autoread           " Auto read changes to buffer
 set cursorline         " Highlight current line
