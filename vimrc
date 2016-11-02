@@ -48,7 +48,12 @@ Plug 'gavocanov/vim-js-indent'
 Plug 'ervandew/supertab'
 
 " Fuzzy finder
-Plug 'ctrlpvim/ctrlp.vim'
+if WINDOWS()
+	Plug 'ctrlpvim/ctrlp.vim'
+else
+	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+	Plug 'junegunn/fzf.vim'
+endif
 
 " Other utils
 Plug 'itchyny/lightline.vim'
@@ -113,10 +118,6 @@ let g:lightline.colorscheme = 'PaperColor'
 let g:sneak#streak = 1
 let g:sneak#s_next = 1
 
-" CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
 " Syntastic
 let g:syntastic_javascript_checkers = ['eslint']
 
@@ -136,6 +137,13 @@ autocmd FileType html,css,javascript setlocal ts=2 sw=2
 
 " type ,ev to edit vimrc
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
+
+" fzf
+if !WINDOWS()
+	nnoremap <leader>ff :Files<CR>
+	nnoremap <leader>fb :Buffers<CR>
+	nnoremap <leader>fw :Windows<CR>
+endif
 
 " Buffers and tabs
 nnoremap <F5> :bp<CR>
