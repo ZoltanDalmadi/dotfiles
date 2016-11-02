@@ -137,8 +137,8 @@ for_window [instance="sxiv"] floating enable border normal
 
 # Programs on specific workspaces ===========================================
 assign [class="URxvt"] $wp_term
-assign [class="st"] $wp_term
-assign [class="chromium"] $wp_www
+assign [class="st-256color"] $wp_term
+assign [class="Chromium"] $wp_www
 assign [class="spotify"] $wp_spotify
 
 # Custom key commands =======================================================
