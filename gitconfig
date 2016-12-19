@@ -9,3 +9,5 @@
 	default = simple
 [diff]
 	tool = vimdiff
+[creditential]
+	helper = cache
