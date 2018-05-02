@@ -67,12 +67,13 @@ bindsym $mod+a focus parent
 set $wp_term    1:term 
 set $wp_www     2:www 
 set $wp_spotify 3:spotify 
+set $wp_vscode  4:vscode 
 
 # switch to workspace
 bindsym $mod+1 workspace $wp_term
 bindsym $mod+2 workspace $wp_www
 bindsym $mod+3 workspace $wp_spotify
-bindsym $mod+4 workspace 4
+bindsym $mod+4 workspace $wp_vscode
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -84,7 +85,7 @@ bindsym $mod+odiaeresis workspace 10
 bindsym $mod+Shift+1 move container to workspace $wp_term
 bindsym $mod+Shift+2 move container to workspace $wp_www
 bindsym $mod+Shift+3 move container to workspace $wp_spotify
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+4 move container to workspace $wp_vscode
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
