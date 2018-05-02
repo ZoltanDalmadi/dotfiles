@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Bar icon font
-font pango:Input Mono Condensed, Font Awesome 9
+font pango:Input Mono Condensed 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -206,7 +206,6 @@ bar {
 }
 
 # Color theme (i3-style) ====================================================
-
 client.focused #61afef #528bff #282c34 #98c379
 client.focused_inactive #828997 #636d83 #282c34 #98c379
 client.unfocused #636d83 #5c6370 #282c34 #98c379
