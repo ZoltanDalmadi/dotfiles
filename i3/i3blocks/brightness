@@ -1,0 +1,7 @@
+#!/bin/sh
+LC_NUMERIC="en_US.UTF-8"
+output=$(xbacklight)
+
+printf "%.0f%%\n" $output
+echo
+echo

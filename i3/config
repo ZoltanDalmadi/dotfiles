@@ -13,6 +13,10 @@ bindsym $mod+Return exec --no-startup-id st -e fish
 # kill focused window
 bindsym $mod+q kill
 
+gaps inner 10
+smart_gaps on
+smart_borders no_gaps
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+Tab exec --no-startup-id rofi -show window
@@ -126,7 +130,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+n exec i3-input -F 'rename workspace to %s' -P 'Enter new name for this workspace: '
 
 # No border for new windows
-new_window none
+default_border pixel 1
 
 workspace_auto_back_and_forth yes
 
@@ -159,8 +163,8 @@ bindsym $mod+Shift+KP_Add exec --no-startup-id mpc volume +1
 bindsym $mod+Shift+KP_Subtract exec --no-startup-id mpc volume -1
 
 # brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 && pkill -SIGRTMIN+9 i3blocks
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 && pkill -SIGRTMIN+9 i3blocks
 
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute && pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute && pkill -SIGRTMIN+10 i3blocks
@@ -186,7 +190,7 @@ exec --no-startup-id unclutter -idle 3 &
 exec --no-startup-id dispwin ~/.config/dell_inspiron_7737.icm
 
 # i3blocks NumLock indicator ================================================
-bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock exec --no-startup-id pkill -SIGRTMIN+11 i3blocks
 
 # Statusbar with conky ======================================================
 bar {
