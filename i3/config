@@ -2,7 +2,8 @@
 set $mod Mod4
 
 # Bar icon font
-font pango:Input Mono Condensed 9
+# font pango:Input Mono Condensed 12
+font pango:Iosevka Term 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
