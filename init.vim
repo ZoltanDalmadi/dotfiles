@@ -149,6 +149,9 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 noremap <S-UP> <NOP>
 noremap <S-DOWN> <NOP>
 
+" Clear last search result (and highlight)
+nnoremap <silent> <C-L> :noh<CR>
+
 " fucking del key fix in fucking st
 map <F1> <del>
 map! <F1> <del>
