@@ -55,14 +55,6 @@ _isroot=false
   #}}}
 #}}}
 ## EXPORTS {{{
-  export PATH=/usr/local/bin:$PATH
-  #Ruby support
-  if which ruby &>/dev/null; then
-    GEM_DIR=$(ruby -rubygems -e 'puts Gem.user_dir')/bin
-    if [[ -d "$GEM_DIR" ]]; then
-      export PATH=$GEM_DIR:$PATH
-    fi
-  fi
   if [[ -d ~/bin ]]; then
     export PATH=~/bin:$PATH
   fi
@@ -254,7 +246,7 @@ _isroot=false
       local USER=`git config --global github.user`
       local EDITOR=`git config --global core.editor`
 
-      [[ -z $NAME ]] && read -p "Nome: " NAME
+      [[ -z $NAME ]] && read -p "Name: " NAME
       [[ -z $EMAIL ]] && read -p "Email: " EMAIL
       [[ -z $USER ]] && read -p "Username: " USER
       [[ -z $EDITOR ]] && read -p "Editor: " EDITOR
