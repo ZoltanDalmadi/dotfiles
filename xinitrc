@@ -8,6 +8,7 @@ xset fp rehash
 # ------------------------------ Keyboard layout ----------------------------
 
 setxkbmap -layout hu,us -option grp:alt_shift_toggle
+export KEYBOARD_LAYOUT=hu
 
 # ----------------------------- Apply resources -----------------------------
 
