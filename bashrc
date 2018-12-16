@@ -55,6 +55,7 @@ _isroot=false
   #}}}
 #}}}
 ## EXPORTS {{{
+  export PATH=/usr/local/bin:~/.npm-global/bin:~/Apps/google-cloud-sdk/bin:$PATH
   if [[ -d ~/bin ]]; then
     export PATH=~/bin:$PATH
   fi
