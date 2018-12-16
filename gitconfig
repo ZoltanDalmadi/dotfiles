@@ -9,5 +9,9 @@
 	default = simple
 [diff]
 	tool = vimdiff
+[merge]
+	tool = vimdiff
 [credential]
-	helper = cache
+	helper = store
+[core]
+	editor = nvim
