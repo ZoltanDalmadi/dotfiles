@@ -187,9 +187,10 @@ mode "$mode_system" {
 bindsym $mod+End mode "$mode_system"
 
 # Startup programs ==========================================================
+exec --no-startup-id compton -b
+exec --no-startup-id dispwin /home/dmz/.config/dell_inspiron_7738.icm
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id unclutter -idle 3 &
-exec --no-startup-id dispwin ~/.config/dell_inspiron_7737.icm
 
 # i3blocks NumLock indicator ================================================
 bindsym --release Num_Lock exec --no-startup-id pkill -SIGRTMIN+11 i3blocks
