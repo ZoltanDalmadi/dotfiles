@@ -96,6 +96,7 @@ let g:sneak#streak = 1
 let g:sneak#s_next = 1
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tslint']
 
 " ============================== Autocommands ===============================
 
@@ -106,7 +107,7 @@ autocmd BufWritePre * call StripTrailingWhitespace()
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " html, css and js files have a tab width of 2
-autocmd FileType html,javascript setlocal ts=2 sw=2
+autocmd FileType html,javascript,css,scss,typescript setlocal ts=2 sw=2 et sts=2
 
 " ============================== Key Commands ===============================
 
