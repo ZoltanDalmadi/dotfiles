@@ -68,10 +68,11 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-set $wp_term    1:term 
-set $wp_www     2:www 
-set $wp_spotify 3:spotify 
-set $wp_vscode  4:vscode 
+set $wp_term    1: term
+set $wp_www     2: www
+set $wp_spotify 3: spotify
+# set $wp_vscode  4: vscode
+set $wp_vscode  4:vscode
 
 # switch to workspace
 bindsym $mod+1 workspace $wp_term
