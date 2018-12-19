@@ -1,0 +1,56 @@
+Xft.dpi: 120
+
+! These options only take effect on startup.
+st.termname:     st-256color
+! if you do not set shell, precedence is: -e arg, utmp option, SHELL env var, /etc/passwd shell
+st.shell:        /bin/fish
+
+! The following options options can be reloaded via USR1 signal.
+st.font: Iosevka Term:pixelsize=22:antialias=true:autohint=true;
+! st.font: Input Mono Condensed:pixelsize=18:antialias=true:autohint=true;
+! st.font: -misc-tamsyn-medium-r-normal--9-65-100-100-c-50-iso8859-1
+! st.font: -misc-tamsyn-medium-r-normal--12-87-100-100-c-60-iso8859-1
+! st.font: -misc-tamsyn-medium-r-normal--13-94-100-100-c-70-iso8859-1
+! st.font: -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1
+! st.font: -misc-tamsyn-medium-r-normal--15-108-100-100-c-80-iso8859-1
+! st.font: -misc-tamsyn-medium-r-normal--16-116-100-100-c-80-iso8859-1
+! st.font: -misc-tamsyn-medium-r-normal--20-145-100-100-c-100-iso8859-1
+
+st.borderpx:     1
+! Available cursor values: 2 4 6 7 = █ _ | ☃ ( 1 3 5 are blinking versions)
+st.cursorshape:  2
+st.cursorthickness:  2
+st.cursorblinkstyle: 0
+st.cursorblinkontype: 1
+st.bold_font:    1
+st.xfps:         120
+st.actionfps:    60
+st.chscale:      1.0
+st.cwscale:      1.0
+st.blinktimeout: 800
+st.bellvolume:   100
+! this is a char that is exposed like so: `printf '\033[z'`
+st.prompt_char:  $
+
+! opacity==255 means what terminal will be not transparent, 0 - fully transparent
+st.opacity:      245
+
+! One Dark color theme
+st.foreground: #abb2bf
+st.background: #282c34
+st.color0: #282c34
+st.color1: #e06c75
+st.color2: #98c379
+st.color3: #d19a66
+st.color4: #528bff
+st.color5: #c678dd
+st.color6: #56b6c2
+st.color7: #abb2bf
+st.color8: #5c6370
+st.color9: #be5046
+st.color10: #98c379
+st.color11: #e5c07b
+st.color12: #61afef
+st.color13: #c678dd
+st.color14: #56b6c2
+st.color15: #ffffff
