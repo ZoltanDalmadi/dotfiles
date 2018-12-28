@@ -1,9 +1,9 @@
 # Set mod key (Mod4 = Win key)
 set $mod Mod4
 
-# Bar font
-# font pango:Input Mono Condensed 12
-font pango:Iosevka Term 10
+# Font
+set_from_resource $font i3wm.font
+font $font
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
