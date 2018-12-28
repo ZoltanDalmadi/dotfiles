@@ -1,0 +1,44 @@
+! OneDark
+! Based on Atom OneDark theme
+! Author: Zoltan Dalmadi (http://github.com/ZoltanDalmadi)
+
+*.foreground: #abb2bf
+*.background: #282c34
+
+! black
+*.color0: #282c34
+*.color8: #5c6370
+
+! red
+*.color1: #e06c75
+*.color9: #be5046
+
+! green
+*.color2: #98c379
+*.color10: #98c379
+
+! yellow
+*.color3: #d19a66
+*.color11: #e5c07b
+
+! blue
+*.color4: #528bff
+*.color12: #61afef
+
+! magenta
+*.color5: #c678dd
+*.color13: #c678dd
+
+! cyan
+*.color6: #56b6c2
+*.color14: #56b6c2
+
+! white
+*.color7: #abb2bf
+*.color15: #ffffff
+
+*.highlightColor:     #5c6370
+*.highlightTextColor: #828997
+
+*.cursorColor:        #636d83
+*.colorBD:            #abb2bf

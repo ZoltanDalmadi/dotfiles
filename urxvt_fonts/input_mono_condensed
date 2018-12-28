@@ -1,3 +1,0 @@
-urxvt.font:        xft:Input Mono Condensed:pixelsize=16:hinting=true
-urxvt.boldFont:    xft:Input Mono Condensed:bold:pixelsize=16:hinting:true
-urxvt.letterSpace: -2

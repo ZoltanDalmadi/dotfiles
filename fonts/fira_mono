@@ -1,0 +1,3 @@
+st.font:     Fira Mono:pixelsize=16:hinting=true
+st.boldFont: Fira Mono:bold:pixelsize=16:hinting=true
+i3wm.font:   pango:Fira Mono 8

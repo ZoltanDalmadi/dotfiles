@@ -1,0 +1,3 @@
+st.font:     Input Mono Condensed:pixelsize=18:hinting=true
+st.boldFont: Input Mono Condensed:bold:pixelsize=18:hinting:true
+i3wm.font:   pango:Input Mono Condensed 8
