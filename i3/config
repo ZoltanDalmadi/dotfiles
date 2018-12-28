@@ -1,7 +1,7 @@
 # Set mod key (Mod4 = Win key)
 set $mod Mod4
 
-# Bar icon font
+# Bar font
 # font pango:Input Mono Condensed 12
 font pango:Iosevka Term 10
 
@@ -14,11 +14,12 @@ bindsym $mod+Return exec --no-startup-id st -e fish
 # kill focused window
 bindsym $mod+q kill
 
+# i3-gaps
 gaps inner 10
 smart_gaps on
 smart_borders no_gaps
 
-# start dmenu (a program launcher)
+# program launcher
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 
@@ -72,8 +73,7 @@ bindsym $mod+a focus parent
 set $wp_term    1: term
 set $wp_www     2: www
 set $wp_spotify 3: spotify
-# set $wp_vscode  4: vscode
-set $wp_vscode  4:vscode
+set $wp_vscode  4: vscode
 
 # switch to workspace
 bindsym $mod+1 workspace $wp_term
@@ -132,7 +132,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+n exec i3-input -F 'rename workspace to %s' -P 'Enter new name for this workspace: '
 
 # No border for new windows
-default_border pixel 1
+default_border pixel 3
 
 workspace_auto_back_and_forth yes
 
@@ -141,17 +141,15 @@ for_window [instance="lxappearance"] floating enable border normal
 for_window [instance="lxtask"] floating enable border normal
 for_window [instance="nitrogen"] floating enable border normal
 for_window [instance="viewnior"] floating enable border normal
-for_window [instance="sxiv"] floating enable border normal
 
 # Programs on specific workspaces ===========================================
-assign [class="URxvt"] $wp_term
 assign [class="st-256color"] $wp_term
 assign [class="Chromium"] $wp_www
 assign [class="spotify"] $wp_spotify
 
 # Custom key commands =======================================================
 # Toggle borders of windows
-bindsym $mod+t border toggle
+bindsym $mod+t border toggle 3
 
 # Toggle bar
 bindsym $mod+b bar mode toggle
@@ -165,13 +163,16 @@ bindsym $mod+Shift+KP_Add exec --no-startup-id mpc volume +1
 bindsym $mod+Shift+KP_Subtract exec --no-startup-id mpc volume -1
 
 # brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 && pkill -SIGRTMIN+9 i3blocks
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 && pkill -SIGRTMIN+9 i3blocks
 
 # master volume
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# i3blocks NumLock indicator
+bindsym --release Num_Lock exec --no-startup-id pkill -SIGRTMIN+11 i3blocks
 
 # Lock, Reboot, Shutdown
 set $mode_system System (e) logout, (r) reboot, (Shift+s) shutdown
@@ -189,33 +190,46 @@ bindsym $mod+End mode "$mode_system"
 
 # Startup programs ==========================================================
 exec --no-startup-id compton -b
-exec --no-startup-id dispwin /home/dmz/.config/dell_inspiron_7738.icm
+exec --no-startup-id dispwin ~/.config/dell_inspiron_7737.icm
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id unclutter -idle 3 &
 
-# i3blocks NumLock indicator ================================================
-# bindsym --release Num_Lock exec --no-startup-id pkill -SIGRTMIN+11 i3blocks
+# Color values from Xresources ==============================================
+set_from_resource $black i3wm.color0
+set_from_resource $brightblack i3wm.color8
+set_from_resource $red i3wm.color1
+set_from_resource $brightred i3wm.color9
+set_from_resource $green i3wm.color2
+set_from_resource $brightgreen i3wm.color10
+set_from_resource $yellow i3wm.color3
+set_from_resource $brightyellow i3wm.color11
+set_from_resource $blue i3wm.color4
+set_from_resource $brightblue i3wm.color12
+set_from_resource $magenta i3wm.color5
+set_from_resource $brightmagenta i3wm.color13
+set_from_resource $cyan i3wm.color6
+set_from_resource $brightcyan i3wm.color14
+set_from_resource $white i3wm.color7
+set_from_resource $brightwhite i3wm.color15
 
-# Statusbar with conky ======================================================
+# Statusbar =================================================================
 bar {
-  # position top
-  # strip_workspace_numbers yes
-  # status_command i3blocks
-  # (i3-style)
-  # colors {
-  #   separator #c678dd
-  #   background #2c323d
-  #   statusline #abb2bf
-  #   focused_workspace #528bff #528bff #282c34
-  #   active_workspace #5c6370 #5c6370 #abb2bf
-  #   inactive_workspace #636d83 #636d83 #abb2bf
-  #   urgent_workspace #d19a66 #d19a66 #282c34
-  # }
-  i3bar_command ~/.config/polybar/launch.sh
+  position top
+  strip_workspace_numbers yes
+  status_command i3blocks
+  colors {
+    separator $magenta
+    background $black
+    statusline $white
+    focused_workspace $magenta $magenta $black
+    active_workspace $brightblue $brightblue $white
+    inactive_workspace $brightblack $brightblack $black
+    urgent_workspace $yellow $yellow $black
+  }
 }
 
-# Color theme (i3-style) ====================================================
-client.focused #61afef #528bff #282c34 #98c379
-client.focused_inactive #828997 #636d83 #282c34 #98c379
-client.unfocused #636d83 #5c6370 #282c34 #98c379
-client.urgent #e5c07b #d19a66 #282c34 #98c379
+# Color theme ===============================================================
+client.focused $brightmagenta $magenta $black $green
+client.focused_inactive $brightblack $brightblack $black $green
+client.unfocused $brightblack $brightblack $black $green
+client.urgent $brightyellow $yellow $black $green
