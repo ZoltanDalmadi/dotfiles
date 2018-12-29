@@ -1,7 +1,8 @@
 #!/bin/sh
-LC_NUMERIC="en_US.UTF-8"
-output=$(xbacklight)
 
-printf "%.0f%%\n" $output
-echo
-echo
+LC_NUMERIC="en_US.UTF-8"
+icon=''
+
+color=$(xrdb -query | awk '/\.color11:/{print $2}')
+
+printf '<span color="%s">%s</span>  %.0f%%\n' $color $icon $(xbacklight)

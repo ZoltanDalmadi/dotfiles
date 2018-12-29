@@ -1,0 +1,27 @@
+#!/bin/sh
+
+colors=($(xrdb -query | awk '/\.color(1|3|6):/{print $2}'))
+danger=${colors[0]}
+warning=${colors[1]}
+safe=${colors[2]}
+
+temp=$(sensors dell_smm-virtual-0 -Au | awk ' /.temp1_input/ {printf("%d\n", $2)}')
+
+if [[ "$temp" -ge 60 ]]; then
+  icon=''
+  color=$danger
+elif [[ "$temp" -ge 55 ]]; then
+  icon=''
+  color=$warning
+elif [[ "$temp" -ge 45 ]]; then
+  icon=''
+  color=$warning
+elif [[ "$temp" -ge 42 ]]; then
+  icon=''
+  color=$safe
+else
+  icon=''
+  color=$safe
+fi
+
+echo "<span color=\"$color\">$icon</span>   $temp°C"

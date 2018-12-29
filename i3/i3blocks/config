@@ -28,104 +28,81 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[fan]
+command=/home/dmz/.config/i3blocks/fan
+interval=2
+
+[temperature]
+command=/home/dmz/.config/i3blocks/temp
+interval=2
+markup=pango
+
 # Volume indicator
-#
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-#label=VOL
 label=♪
 instance=Master
-#instance=PCM
 interval=once
 signal=10
 
+# Screen brightness
 [brightness]
 command=/home/dmz/.config/i3blocks/brightness
-label=
 interval=once
 signal=9
+markup=pango
 
 # Memory usage
-#
-# The type defaults to "mem" if the instance is not specified.
 [memory]
 command=/home/dmz/.config/i3blocks/memory
 label=
 #separator=false
 interval=10
 
-#[memory]
-#label=SWAP
-#instance=swap
-#separator=false
-#interval=30
-
 # Disk usage
-#
 # The directory defaults to $HOME if the instance is not specified.
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
-# [disk]
-# label=  HOME
+[disk]
+label=
 #instance=/mnt/data
-# interval=30
-
-# Network interface monitoring
-#
-# If the instance is not specified, use the interface used for default route.
-# The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
-#[iface]
-#instance=wlan0
-#color=#00FF00
-#interval=10
-#separator=false
-
-#[wifi]
-#instance=wlp3s0
-#interval=10
-#separator=false
-
-#[bandwidth]
-#instance=eth0
-#interval=5
-
-# CPU usage
-#
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-[cpu_usage]
-command=/home/dmz/.config/i3blocks/cpu_usage
-label=  CPU
-interval=2
-# min_width=CPU: 100%
-
-#separator=false
-
-#[load_average]
-#interval=10
-
-# Battery indicator
-#
-# The battery instance defaults to 0.
-[battery]
-#label=BAT
-#label=⚡
-command=/home/dmz/.config/i3blocks/battery
-#instance=1
 interval=30
 
+# CPU usage
+[cpu_usage]
+command=/home/dmz/.config/i3blocks/cpu_usage
+interval=2
+markup=pango
+
+# Battery indicator
+[battery]
+command=/home/dmz/.config/i3blocks/battery
+interval=30
+markup=pango
+
+# Num Lock indicator
 [keyindicator]
 instance=NUM
 interval=once
 signal=11
 
-# Date Time
-#
-[time]
-command=echo -n '  ' && date '+%Y-%m-%d %H:%M'
+# Date
+[date]
+command=echo -e "   $(date '+%F')\n\n"
 interval=5
+
+# Time
+[time]
+command=echo -e "  $(date '+%R')\n\n"
+interval=5
+
+# Full name of logged in user
+[fullname]
+label=
+command=echo -e " $(getent passwd $(whoami) | cut -d ':' -f 5 | sed -e 's/,//g') \n\n"
+interval=once
 
 # Generic media player support
 #
@@ -136,12 +113,6 @@ interval=5
 #interval=5
 #signal=10
 
-# OpenVPN support
-#
-# Support multiple VPN, with colors.
-#[openvpn]
-#interval=20
-
 # Temperature
 #
 # Support multiple chips, though lm-sensors.
@@ -150,14 +121,3 @@ interval=5
 #[temperature]
 #label=TEMP
 #interval=10
-
-# Key indicators
-#
-# Add the following bindings to i3 config file:
-#
-# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-#[keyindicator]
-#instance=CAPS
-#interval=once
-#signal=11

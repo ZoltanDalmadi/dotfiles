@@ -1,42 +1,52 @@
 #!/bin/sh
+
 output=$(acpi -b)
 regex="Battery 0: ([a-zA-Z]+), ([0-9]+)%, ([0-9]{2}:[0-9]{2})*"
+regex_full="Battery 0: ([a-zA-Z]+), ([0-9]+)%"
 
 if [[ $output =~ $regex ]]; then
   status="${BASH_REMATCH[1]}"
   percent="${BASH_REMATCH[2]}"
   remaining="${BASH_REMATCH[3]}"
+elif [[ $output =~ $regex_full ]]; then
+  status="${BASH_REMATCH[1]}"
+  percent="${BASH_REMATCH[2]}"
+  remaining="Inf"
 fi
 
-if [[ "$status" = 'Charging' ]]; then
-  icon=''
-elif [[ "$status" = 'Discharging' ]]; then
-  if [ "$percent" -lt 20 ]; then
-    icon=''
-  elif [ "$percent" -lt 40 ]; then
-    icon=''
-  elif [ "$percent" -lt 60 ]; then
-    icon=''
-  elif [ "$percent" -lt 80 ]; then
-    icon=''
-  else
-    icon=''
-  fi
-fi
+colors=($(xrdb -query | awk '/\.color(1|2|3|6):/{print $2}'))
+safe=${colors[1]}
+warning=${colors[2]}
+danger=${colors[0]}
+charging=${colors[3]}
 
-printf "%s  % 3d%% (%s)\n" $icon $percent $remaining
-echo
+exitcode=0
+icon=''
+color=$charging
 
 if [[ "$status" = 'Discharging' ]]; then
-  if [ "$percent" -lt 30 ]; then
-    echo "#BE5046"
+  if [ "$percent" -lt 20 ]; then
+    icon=''
+    color=$danger
+    exitcode=33
+  elif [ "$percent" -le 30 ]; then
+    icon=''
+    color=$danger
+  elif [ "$percent" -lt 40 ]; then
+    icon=''
+    color=$warning
   elif [ "$percent" -lt 60 ]; then
-    echo "#D19A66"
+    icon=''
+    color=$warning
+  elif [ "$percent" -lt 80 ]; then
+    icon=''
+    color=$safe
   else
-    echo "#98C379"
+    icon=''
+    color=$safe
   fi
 fi
 
-if [ "$percent" -lt 20 ]; then
-  exit 33
-fi
+printf "<span color=\"%s\">%s</span> %3d%% (%s)\n" $color $icon $percent $remaining
+
+exit $exitcode
