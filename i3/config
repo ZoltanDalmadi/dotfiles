@@ -163,8 +163,8 @@ bindsym $mod+Shift+KP_Add exec --no-startup-id mpc volume +1
 bindsym $mod+Shift+KP_Subtract exec --no-startup-id mpc volume -1
 
 # brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 && pkill -SIGRTMIN+9 i3blocks
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 && pkill -SIGRTMIN+9 i3blocks
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 && pkill -RTMIN+9 i3blocks
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 && pkill -RTMIN+9 i3blocks
 
 # master volume
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
@@ -172,7 +172,7 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # i3blocks NumLock indicator
-bindsym --release Num_Lock exec --no-startup-id pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock exec --no-startup-id pkill -RTMIN+11 i3blocks
 
 # Lock, Reboot, Shutdown
 set $mode_system System (e) logout, (r) reboot, (Shift+s) shutdown
