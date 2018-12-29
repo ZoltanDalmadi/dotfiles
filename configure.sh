@@ -8,7 +8,7 @@ join() {
     local IFS="$1"; shift; echo "$*";
 }
 
-script_dir=$(dirname $(readlink -f $0))
+script_dir="${0%/*}"
 
 index=0
 for theme in $script_dir/colors/*; do
