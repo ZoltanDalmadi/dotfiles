@@ -81,7 +81,7 @@ let mapleader = ","
 
 " Color scheme
 set background=dark
-colorscheme palenight
+colorscheme dracula
 
 " ============================ Plugin settings ==============================
 
@@ -90,7 +90,7 @@ let g:deoplete#enable_at_startup = 1
 
 " lightline
 let g:lightline = {}
-let g:lightline.colorscheme = 'palenight'
+let g:lightline.colorscheme = 'Dracula'
 
 " sneak
 let g:sneak#streak = 1
