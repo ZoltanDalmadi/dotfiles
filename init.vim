@@ -29,7 +29,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'chriskempson/base16-vim'
 Plug 'zsoltf/vim-maui'
 Plug 'jordwalke/flatlandia'
-Plug 'MaxSt/FlatColor'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'rakr/vim-one'
 Plug 'dracula/vim'
 
@@ -80,8 +80,8 @@ set nobackup           " Disable backups
 let mapleader = ","
 
 " Color scheme
-colorscheme one
 set background=dark
+colorscheme palenight
 
 " ============================ Plugin settings ==============================
 
@@ -90,7 +90,7 @@ let g:deoplete#enable_at_startup = 1
 
 " lightline
 let g:lightline = {}
-let g:lightline.colorscheme = 'one'
+let g:lightline.colorscheme = 'palenight'
 
 " sneak
 let g:sneak#streak = 1
