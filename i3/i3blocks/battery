@@ -14,7 +14,7 @@ elif [[ $output =~ $regex_full ]]; then
   remaining="Inf"
 fi
 
-colors=($(xrdb -query | awk '/\.color(1|2|3|6):/{print $2}'))
+colors=($(xrdb -query | sort | awk '/\.color(1|2|3|6):/{print $2}'))
 safe=${colors[1]}
 warning=${colors[2]}
 danger=${colors[0]}
