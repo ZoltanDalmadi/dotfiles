@@ -1,0 +1,11 @@
+#!/bin/sh
+
+status=$(xset -q | awk '/Num Lock:/{print $8}')
+
+colors=($(xrdb -query | sort | awk '/\.color(2|8):/{print $2}'))
+on=${colors[0]}
+off=${colors[1]}
+
+[[ $status = "on" ]] && color=$on || color=$off
+
+echo -e "NUM\n\n$color"

@@ -84,14 +84,14 @@ markup=pango
 
 # Num Lock indicator
 [keyindicator]
-instance=NUM
+command=/home/dmz/.config/i3blocks/keyindicator
 interval=once
 signal=11
 
 # Date
 [date]
 command=echo -e "   $(date '+%F')\n\n"
-interval=5
+interval=1800
 
 # Time
 [time]
