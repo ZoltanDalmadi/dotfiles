@@ -221,7 +221,7 @@ bar {
     separator $magenta
     background $black
     statusline $white
-    focused_workspace $magenta $magenta $black
+    focused_workspace $blue $blue $black
     active_workspace $brightblue $brightblue $white
     inactive_workspace $brightblack $brightblack $black
     urgent_workspace $yellow $yellow $black
@@ -229,7 +229,7 @@ bar {
 }
 
 # Color theme ===============================================================
-client.focused $brightmagenta $magenta $black $green
+client.focused $blue $blue $black $green
 client.focused_inactive $brightblack $brightblack $black $green
 client.unfocused $brightblack $brightblack $black $green
-client.urgent $brightyellow $yellow $black $green
+client.urgent $yellow $yellow $black $green
