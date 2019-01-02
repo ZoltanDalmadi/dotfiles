@@ -46,4 +46,4 @@ fi
 [[ -n $theme ]] && ln -sf $script_dir/colors/$theme $script_dir/theme
 [[ -n $font ]] && ln -sf $script_dir/fonts/$font $script_dir/font
 
-xrdb -I$script_dir $script_dir/Xresources && killall -USR1 st && i3-msg restart
+xrdb -I$script_dir -merge $script_dir/Xresources && killall -USR1 st && i3-msg restart

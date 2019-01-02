@@ -1,6 +1,6 @@
 #!/bin/sh
 
-colors=($(xrdb -query | sort | awk '/\.color(1|3|6):/{print $2}'))
+colors=($(xrdb -query | awk '/color(1|3|6):/{print $2}'))
 danger=${colors[0]}
 warning=${colors[1]}
 safe=${colors[2]}

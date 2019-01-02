@@ -1,6 +1,6 @@
 #!/bin/sh
 
-colors=($(xrdb -query | sort | awk '/\.color(6|8):/{print $2}'))
+colors=($(xrdb -query | awk '/color(6|8):/{print $2}'))
 spinning=${colors[0]}
 still=${colors[1]}
 color=$still

@@ -2,7 +2,7 @@
 
 status=$(xset -q | awk '/Num Lock:/{print $8}')
 
-colors=($(xrdb -query | sort | awk '/\.color(2|8):/{print $2}'))
+colors=($(xrdb -query | awk '/color(2|8):/{print $2}'))
 on=${colors[0]}
 off=${colors[1]}
 
